@@ -43,6 +43,7 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
+
     </style>
 </head>
 <body>
@@ -54,11 +55,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link active" aria-current="page" href="">Home</a>-->
+<!--                </li>-->
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact">संपर्क</a>
+                    <a  style="color:blue" class="nav-link" href="/contact/">संपर्क</a>
                 </li>
             </ul>
             <form class="d-flex">
@@ -72,9 +73,43 @@
     <div class="marquee">
         <h1>आर.के फाइनेंशियलमध्ये आपले स्वागत आहे</h1>
     </div>
-<!--  <div>-->
-<!--    <img src="C:\Users\Hp\Downloads\20240425_203411.jpg" alt="Description of the image">-->
+<!--  <div style="text-align: center;">-->
+<!--    <img  width="50%" height="50%" src="https://etimg.etb2bimg.com/photo/86444984.cms" alt="Description of the image">-->
 <!--  </div>-->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://etimg.etb2bimg.com/photo/86444984.cms" class="d-block w-100" style="height: 400px;" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.thegef.org/sites/default/files/styles/banner_image/public/2021-11/topics_banner_blendedfinance.jpg?h=4e9a1ef8&itok=wkLt635t" class="d-block w-100" style="height: 400px;"  alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://financeplaninfo.com/wp-content/uploads/2023/02/finance-kya-hai.webp" class="d-block w-100" style="height: 400px;"  alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 <div class="container mt-5">
     <div class="row justify-content-center">
@@ -127,7 +162,7 @@
                         <div class="row justify-content-center">
                             <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
-                                <form class="text-center" id="contactForm" action="save/data/" method="post">
+                                <form  style="background-color: #cc99ff;" class="text-center" id="contactForm" action="save/data/" method="post">
                                     {% csrf_token %}
                                     <label for="name">Name:</label><br>
                                     <input type="text" id="name" name="name"><br>
@@ -146,6 +181,12 @@
         </div>
     </div>
 </section>
+<br><br>
+<div  style="text-align: center;">
+  <a href="/feedback" style="color:#00cc66">फीडबॅक फॉर्म भरण्यासाठी येथे क्लिक करा</a><br><br>
+  <a href="/display_feedback" style="color:#a8a632">फीडबॅक पाहण्यासाठी येथे क्लिक करा</a>
+</div>
+<br><br>
 <footer class="mainfooter" role="contentinfo">
     <div class="footer-middle">
         <div class="container">
@@ -185,6 +226,7 @@
             });
         });
     });
+
 </script>
 </body>
 </html>

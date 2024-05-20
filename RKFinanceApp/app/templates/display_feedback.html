@@ -1,0 +1,838 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Customer Feedback</title>-->
+<!--    <style>-->
+<!--        /* Add your CSS styles here */-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Customer Feedback</h1>-->
+<!--    <div id="feedbackContainer"></div>-->
+
+<!--    <script>-->
+<!--        async function fetchCustomerFeedbackData() {-->
+<!--            try {-->
+<!--                const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';-->
+<!--                const apiUrl = 'http://127.0.0.1:8000/get/feedback'; // Your API URL-->
+
+<!--                const response = await fetch(apiUrl); // Replace '/api/customer-feedback' with your actual API endpoint-->
+<!--                console.log("data",response)-->
+<!--                if (!response.ok) {-->
+<!--                    throw new Error('Failed to fetch data');-->
+<!--                }-->
+<!--                const data = await response.json();-->
+<!--                return data;-->
+<!--            } catch (error) {-->
+<!--                console.error(error);-->
+<!--                return [];-->
+<!--            }-->
+<!--        }-->
+
+<!--        async function displayCustomerFeedback() {-->
+<!--            const feedbackContainer = document.getElementById('feedbackContainer');-->
+<!--            feedbackContainer.innerHTML = ''; // Clear previous content-->
+
+<!--            try {-->
+<!--                const feedbackData = await fetchCustomerFeedbackData();-->
+<!--                if (feedbackData.length < 1) {-->
+<!--                    const noFeedbackMsg = document.createElement('p');-->
+<!--                    noFeedbackMsg.textContent = 'No feedback available.';-->
+<!--                    feedbackContainer.appendChild(noFeedbackMsg);-->
+<!--                } else {-->
+<!--                    feedbackData.forEach(feedback => {-->
+<!--                        const { name, image, feedbackText } = feedback;-->
+
+<!--                        // Create elements for displaying feedback-->
+<!--                        const feedbackDiv = document.createElement('div');-->
+<!--                        feedbackDiv.classList.add('feedback');-->
+
+<!--                        // Create image element-->
+<!--                        const img = document.createElement('img');-->
+<!--                        img.src = image;-->
+<!--                        img.alt = name + "'s Image";-->
+<!--                        feedbackDiv.appendChild(img);-->
+
+<!--                        // Create name element-->
+<!--                        const namePara = document.createElement('p');-->
+<!--                        namePara.textContent = name;-->
+<!--                        feedbackDiv.appendChild(namePara);-->
+
+<!--                        // Create feedback text element-->
+<!--                        const feedbackPara = document.createElement('p');-->
+<!--                        feedbackPara.textContent = feedbackText;-->
+<!--                        feedbackDiv.appendChild(feedbackPara);-->
+
+<!--                        // Append feedbackDiv to feedbackContainer-->
+<!--                        feedbackContainer.appendChild(feedbackDiv);-->
+<!--                    });-->
+<!--                }-->
+<!--            } catch (error) {-->
+<!--                console.error(error);-->
+<!--                feedbackContainer.innerHTML = 'Failed to load feedback data.';-->
+<!--            }-->
+<!--        }-->
+
+<!--        // Call the displayCustomerFeedback function when the page loads-->
+<!--        displayCustomerFeedback();-->
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--<title>API Data Display</title>-->
+<!--<script>-->
+<!--    // Function to fetch data from the API-->
+<!--    function fetchData() {-->
+<!--        fetch('http://127.0.0.1:8000/get/feedback') // Replace 'https://example.com/api/data' with your API endpoint-->
+<!--            .then(response => response.json())-->
+<!--            .then(data => {-->
+<!--                // Once data is fetched, update HTML content-->
+<!--                const dataList = document.getElementById('dataList');-->
+<!--                dataList.innerHTML = ''; // Clear previous content-->
+
+<!--                // Iterate over the data and create list items for each entry-->
+<!--                data.forEach(entry => {-->
+<!--                    const listItem = document.createElement('li');-->
+<!--                    listItem.textContent = entry.firstName + ' ' + entry.lastName;-->
+<!--                    dataList.appendChild(listItem);-->
+<!--                });-->
+<!--            })-->
+<!--            .catch(error => {-->
+<!--                console.error('Error fetching data:', error);-->
+<!--            });-->
+<!--    }-->
+
+<!--    // Call the fetchData function when the page loads-->
+<!--    window.onload = fetchData;-->
+<!--</script>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>API Data Display</h1>-->
+<!--    <ul id="dataList">-->
+<!--        &lt;!&ndash; Data will be dynamically added here &ndash;&gt;-->
+<!--    </ul>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--<title>API Data Display</title>-->
+<!--<script>-->
+<!--    // Function to fetch data from the API-->
+<!--    function fetchData() {-->
+<!--        fetch('https://example.com/api/data') // Replace 'https://example.com/api/data' with your API endpoint-->
+<!--            .then(response => response.json())-->
+<!--            .then(data => {-->
+<!--                // Once data is fetched, update HTML content-->
+<!--                const dataList = document.getElementById('dataList');-->
+<!--                dataList.innerHTML = ''; // Clear previous content-->
+<!--                -->
+<!--                // Iterate over the data and create list items for each entry-->
+<!--                data.forEach(entry => {-->
+<!--                    const listItem = document.createElement('li');-->
+<!--                    listItem.textContent = entry.firstName + ' ' + entry.lastName;-->
+<!--                    dataList.appendChild(listItem);-->
+<!--                });-->
+<!--            })-->
+<!--            .catch(error => {-->
+<!--                console.error('Error fetching data:', error);-->
+<!--            });-->
+<!--    }-->
+
+<!--    // Call the fetchData function when the page loads-->
+<!--    window.onload = fetchData;-->
+<!--</script>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>API Data Display</h1>-->
+<!--    <ul id="dataList">-->
+<!--        &lt;!&ndash; Data will be dynamically added here &ndash;&gt;-->
+<!--    </ul>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--<title>Customer Information</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Customer Information</h1>-->
+<!--    <div id="customerInfo"></div>-->
+
+<!--    <script>-->
+<!--        // Function to fetch customer information from the API-->
+<!--        function fetchCustomerInfo() {-->
+<!--            fetch('http://127.0.0.1:8000/get/feedback') // Replace 'https://example.com/api/customerInfo' with your API endpoint-->
+<!--                .then(response => response.json())-->
+<!--                .then(data => {-->
+<!--                    // Once data is fetched, update HTML content-->
+<!--                    const customerInfoDiv = document.getElementById('customerInfo');-->
+<!--                    customerInfoDiv.innerHTML = ''; // Clear previous content-->
+
+<!--                    // Create HTML elements to display customer information-->
+<!--                    const customerList = document.createElement('ul');-->
+<!--                    for (const key in data) {-->
+<!--                        if (data.hasOwnProperty(key)) {-->
+<!--                            const listItem = document.createElement('li');-->
+<!--                            listItem.textContent = `${key}: ${data[key]}`;-->
+<!--                            customerList.appendChild(listItem);-->
+<!--                        }-->
+<!--                    }-->
+<!--                    customerInfoDiv.appendChild(customerList);-->
+<!--                })-->
+<!--                .catch(error => {-->
+<!--                    console.error('Error fetching customer information:', error);-->
+<!--                });-->
+<!--        }-->
+
+<!--        // Call the fetchCustomerInfo function when the page loads-->
+<!--        window.onload = fetchCustomerInfo;-->
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--<title>Feedback Display</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Feedback Display</h1>-->
+<!--    <div id="feedbackList"></div>-->
+
+<!--    <script>-->
+<!--        // Function to fetch feedback data from the backend-->
+<!--        function fetchFeedback() {-->
+<!--            fetch('http://127.0.0.1:8000/get/feedback') // Replace with your backend URL-->
+
+<!--                .then(response => response.json())-->
+<!--                .then(data => {-->
+<!--                console.log('XSASASS',response.json())-->
+<!--                    // Once data is fetched, update HTML content-->
+<!--                    const feedbackListDiv = document.getElementById('feedbackList');-->
+<!--                    feedbackListDiv.innerHTML = ''; // Clear previous content-->
+
+<!--                    // Create HTML elements to display feedback-->
+<!--                    const feedbackUl = document.createElement('ul');-->
+<!--                    data.forEach(item => {-->
+<!--                        const feedbackLi = document.createElement('li');-->
+<!--                        feedbackLi.textContent = `Name: ${item.name}, Feedback: ${item.feedback}`;-->
+<!--                        feedbackUl.appendChild(feedbackLi);-->
+<!--                    });-->
+<!--                    feedbackListDiv.appendChild(feedbackUl);-->
+<!--                })-->
+<!--                .catch(error => {-->
+<!--                    console.error('Error fetching feedback:', error);-->
+<!--                });-->
+<!--        }-->
+
+<!--        // Call the fetchFeedback function when the page loads-->
+<!--        window.onload = fetchFeedback;-->
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--<title>Display Feedback</title>-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Feedback</h1>-->
+<!--    <ul id="feedbackList"></ul>-->
+
+<!--    <script>-->
+<!--        $(document).ready(function() {-->
+<!--            // Fetch data from Django view using AJAX-->
+<!--            $.ajax({-->
+<!--                url: 'http://127.0.0.1:8000/get/feedback', // URL of your Django view-->
+<!--                type: 'GET',-->
+<!--                dataType: 'json',-->
+<!--                success: function(response) {-->
+<!--                    // Update HTML content with fetched data-->
+<!--                    if (response && response.data) {-->
+<!--                        var feedbackList = $('#feedbackList');-->
+<!--                        $.each(response.data, function(index, item) {-->
+<!--                            feedbackList.append('<li>Name: ' + item.name + ', Feedback: ' + item.feedback + '</li>');-->
+<!--                        });-->
+<!--                    }-->
+<!--                },-->
+<!--                error: function(xhr, status, error) {-->
+<!--                    console.error('Error fetching feedback:', error);-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--<title>AJAX Example</title>-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Fetch Data from Django View</h1>-->
+<!--    <button id="fetchButton">Fetch Data</button>-->
+<!--    <div id="responseData"></div>-->
+
+<!--    <script>-->
+<!--        $(document).ready(function() {-->
+<!--            $('#fetchButton').click(function() {-->
+<!--                $.ajax({-->
+<!--                    url: 'http://127.0.0.1:8000/get/feedback/',  // URL of your Django view-->
+<!--                    type: 'GET',-->
+<!--                    dataType: 'json',-->
+<!--                    success: function(response) {-->
+<!--                        // Update HTML content with fetched data-->
+<!--                        $('#responseData').html(JSON.stringify(response));-->
+<!--                    },-->
+<!--                    error: function(xhr, status, error) {-->
+<!--                        console.error('Error:', error);-->
+<!--                    }-->
+<!--                });-->
+<!--            });-->
+<!--        });-->
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>AJAX Example</title>-->
+<!--    &lt;!&ndash; Bootstrap CSS &ndash;&gt;-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">-->
+<!--    <style>-->
+<!--        body {-->
+<!--            background-color: #f8f9fa;-->
+<!--            font-family: Arial, sans-serif;-->
+<!--        }-->
+<!--        .container {-->
+<!--            max-width: 600px;-->
+<!--            margin: 0 auto;-->
+<!--            padding: 20px;-->
+<!--            border-radius: 10px;-->
+<!--            background-color: #fff;-->
+<!--            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+<!--        h1 {-->
+<!--            font-size: 24px;-->
+<!--            font-weight: bold;-->
+<!--            text-align: center;-->
+<!--            margin-bottom: 20px;-->
+<!--        }-->
+<!--        #responseData {-->
+<!--            margin-top: 30px;-->
+<!--        }-->
+<!--        .feedback-item {-->
+<!--            margin-bottom: 20px;-->
+<!--            padding: 15px;-->
+<!--            border-radius: 5px;-->
+<!--            background-color: #f1f1f1;-->
+<!--            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+<!--        .feedback-item p {-->
+<!--            margin-bottom: 5px;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container mt-5">-->
+<!--        <h1>Feedback from our Customers</h1>-->
+<!--        <div id="responseData"></div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; jQuery &ndash;&gt;-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--    &lt;!&ndash; Bootstrap JS &ndash;&gt;-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>-->
+<!--    <script>-->
+<!--        $(document).ready(function() {-->
+<!--            $.ajax({-->
+<!--                url: 'http://127.0.0.1:8000/get/feedback/',  // URL of your Django view-->
+<!--                type: 'GET',-->
+<!--                dataType: 'json',-->
+<!--                success: function(response) {-->
+<!--                    var formattedData = '';-->
+<!--                    if (response.hasOwnProperty('data')) {-->
+<!--                        $.each(response.data, function(index, entry) {-->
+<!--                            formattedData += '<div class="feedback-item">';-->
+<!--                            formattedData += '<p><strong>Name:</strong> ' + entry.name + '</p>';-->
+<!--                            formattedData += '<p><strong>Feedback:</strong> ' + entry.feedback + '</p>';-->
+<!--                            formattedData += '</div>';-->
+<!--                        });-->
+<!--                        $('#responseData').html(formattedData);-->
+<!--                    } else {-->
+<!--                        console.error('Error: "data" key not found in response.');-->
+<!--                    }-->
+<!--                },-->
+<!--                error: function(xhr, status, error) {-->
+<!--                    console.error('Error:', error);-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>AJAX Example</title>-->
+<!--    &lt;!&ndash; Bootstrap CSS &ndash;&gt;-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">-->
+<!--    &lt;!&ndash; Font Awesome CSS &ndash;&gt;-->
+<!--    <style>-->
+<!--        body {-->
+<!--            background-color: #f8f9fa;-->
+<!--            font-family: Arial, sans-serif;-->
+<!--        }-->
+<!--        .container {-->
+<!--            max-width: 600px;-->
+<!--            margin: 0 auto;-->
+<!--            padding: 20px;-->
+<!--            border-radius: 10px;-->
+<!--            background-color: #fff;-->
+<!--            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+<!--        h1 {-->
+<!--            font-size: 24px;-->
+<!--            font-weight: bold;-->
+<!--            text-align: center;-->
+<!--            margin-bottom: 20px;-->
+<!--        }-->
+<!--        #responseData {-->
+<!--            margin-top: 30px;-->
+<!--        }-->
+<!--        .feedback-item {-->
+<!--            margin-bottom: 20px;-->
+<!--            padding: 15px;-->
+<!--            border-radius: 5px;-->
+<!--            background-color: #f1f1f1;-->
+<!--            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);-->
+<!--            text-align: center;-->
+<!--        }-->
+<!--        .feedback-item p {-->
+<!--            margin-bottom: 5px;-->
+<!--        }-->
+<!--        .feedback-icon {-->
+<!--            font-size: 48px;-->
+<!--            margin-bottom: 15px;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container mt-5">-->
+<!--        <h1>Fetch Data from Django View</h1>-->
+<!--        <div id="responseData"></div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; jQuery &ndash;&gt;-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--    &lt;!&ndash; Font Awesome JS &ndash;&gt;-->
+<!--    <script src="https://kit.fontawesome.com/a076d05399.js"></script>-->
+<!--    &lt;!&ndash; Bootstrap JS &ndash;&gt;-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>-->
+<!--    <script>-->
+<!--        $(document).ready(function() {-->
+<!--            $.ajax({-->
+<!--                url: 'http://127.0.0.1:8000/get/feedback/',  // URL of your Django view-->
+<!--                type: 'GET',-->
+<!--                dataType: 'json',-->
+<!--                success: function(response) {-->
+<!--                    var formattedData = '';-->
+<!--                    if (response.hasOwnProperty('data')) {-->
+<!--                        $.each(response.data, function(index, entry) {-->
+<!--                            formattedData += '<div class="feedback-item">';-->
+<!--                            formattedData += '<i class="far fa-person feedback-icon"></i>';-->
+<!--                            formattedData += '<p><strong>Name:</strong> ' + entry.name + '</p>';-->
+<!--                            formattedData += '<p><strong>Feedback:</strong> ' + entry.feedback + '</p>';-->
+<!--                            formattedData += '</div>';-->
+<!--                        });-->
+<!--                        $('#responseData').html(formattedData);-->
+<!--                    } else {-->
+<!--                        console.error('Error: "data" key not found in response.');-->
+<!--                    }-->
+<!--                },-->
+<!--                error: function(xhr, status, error) {-->
+<!--                    console.error('Error:', error);-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>AJAX Example</title>-->
+<!--    &lt;!&ndash; Bootstrap CSS &ndash;&gt;-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">-->
+<!--    &lt;!&ndash; Font Awesome CSS &ndash;&gt;-->
+<!--    <style>-->
+<!--        body {-->
+<!--            background-color: #f8f9fa;-->
+<!--            font-family: Arial, sans-serif;-->
+<!--        }-->
+<!--        .container {-->
+<!--            max-width: 600px;-->
+<!--            margin: 0 auto;-->
+<!--            padding: 20px;-->
+<!--            border-radius: 10px;-->
+<!--            background-color: #fff;-->
+<!--            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+<!--        h1 {-->
+<!--            font-size: 24px;-->
+<!--            font-weight: bold;-->
+<!--            text-align: center;-->
+<!--            margin-bottom: 20px;-->
+<!--        }-->
+<!--        #responseData {-->
+<!--            margin-top: 30px;-->
+<!--        }-->
+<!--        .feedback-item {-->
+<!--            margin-bottom: 20px;-->
+<!--            padding: 15px;-->
+<!--            border-radius: 5px;-->
+<!--            background-color: #f1f1f1;-->
+<!--            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);-->
+<!--            text-align: center;-->
+<!--            transition: background-color 0.3s;-->
+<!--        }-->
+<!--        .feedback-item:hover {-->
+<!--            background-color: #e9e9e9;-->
+<!--        }-->
+<!--        .feedback-item p {-->
+<!--            margin-bottom: 5px;-->
+<!--        }-->
+<!--        .feedback-icon {-->
+<!--            font-size: 48px;-->
+<!--            margin-bottom: 15px;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container mt-5">-->
+<!--        <h1 style="color:#009999;">आर के फायनान्शिअल विषय इतर व्यक्ती काय म्हणतात आणि लोकांच्या आयुष्यात कसे परिवर्तन झाले तुम्ही स्वतः बघा</h1>-->
+<!--        <div id="responseData"></div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; jQuery &ndash;&gt;-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--    &lt;!&ndash; Font Awesome JS &ndash;&gt;-->
+<!--    <script src="https://kit.fontawesome.com/a076d05399.js"></script>-->
+<!--    &lt;!&ndash; Bootstrap JS &ndash;&gt;-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>-->
+<!--    <script>-->
+<!--        $(document).ready(function() {-->
+<!--            $.ajax({-->
+<!--                url: 'http://127.0.0.1:8000/get/feedback/',  // URL of your Django view-->
+<!--                type: 'GET',-->
+<!--                dataType: 'json',-->
+<!--                success: function(response) {-->
+<!--                    var formattedData = '';-->
+<!--                    if (response.hasOwnProperty('data')) {-->
+<!--                        $.each(response.data, function(index, entry) {-->
+<!--                            formattedData += '<div class="feedback-item">';-->
+<!--                            formattedData += '<i class="far fa-person feedback-icon"></i>';-->
+<!--                            formattedData += '<p><strong>Name:</strong> ' + entry.name + '</p>';-->
+<!--                            formattedData += '<p><strong>Feedback:</strong> ' + entry.feedback + '</p>';-->
+<!--                            formattedData += '</div>';-->
+<!--                        });-->
+<!--                        $('#responseData').html(formattedData);-->
+<!--                    } else {-->
+<!--                        console.error('Error: "data" key not found in response.');-->
+<!--                    }-->
+<!--                },-->
+<!--                error: function(xhr, status, error) {-->
+<!--                    console.error('Error:', error);-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>AJAX Example</title>-->
+<!--    &lt;!&ndash; Bootstrap CSS &ndash;&gt;-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">-->
+<!--    &lt;!&ndash; Font Awesome CSS &ndash;&gt;-->
+<!--    <style>-->
+<!--        body {-->
+<!--            background-color: #f8f9fa;-->
+<!--            font-family: Arial, sans-serif;-->
+<!--        }-->
+<!--        .container {-->
+<!--            max-width: 600px;-->
+<!--            margin: 0 auto;-->
+<!--            padding: 20px;-->
+<!--            border-radius: 10px;-->
+<!--            background-color: #fff;-->
+<!--            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+<!--        h1 {-->
+<!--            font-size: 24px;-->
+<!--            font-weight: bold;-->
+<!--            text-align: center;-->
+<!--            margin-bottom: 20px;-->
+<!--        }-->
+<!--        #responseData {-->
+<!--            margin-top: 30px;-->
+<!--        }-->
+<!--        .feedback-item {-->
+<!--            margin-bottom: 20px;-->
+<!--            padding: 15px;-->
+<!--            border-radius: 5px;-->
+<!--            background-color: #f1f1f1;-->
+<!--            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);-->
+<!--            text-align: center;-->
+<!--            transition: background-color 0.3s;-->
+<!--        }-->
+<!--        .feedback-item:hover {-->
+<!--            background-color: #e9e9e9;-->
+<!--        }-->
+<!--        .feedback-item p {-->
+<!--            margin-bottom: 5px;-->
+<!--        }-->
+<!--        .feedback-icon {-->
+<!--            font-size: 48px;-->
+<!--            margin-bottom: 15px;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <nav class="navbar navbar-dark bg-primary">-->
+<!--        <div class="container">-->
+<!--&lt;!&ndash;            <a class="navbar-brand" href="#">AJAX Example</a>&ndash;&gt;-->
+<!--&lt;!&ndash;            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">&ndash;&gt;-->
+<!--&lt;!&ndash;                <span class="navbar-toggler-icon"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;            </button>&ndash;&gt;-->
+
+<!--            <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--                <ul class="navbar-nav me-auto">-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="#">Home</a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </nav>-->
+
+<!--    <div class="container mt-5">-->
+<!--        <h1>Fetch Data from Django View</h1>-->
+<!--        <div id="responseData"></div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; jQuery &ndash;&gt;-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--    &lt;!&ndash; Font Awesome JS &ndash;&gt;-->
+<!--    <script src="https://kit.fontawesome.com/a076d05399.js"></script>-->
+<!--    &lt;!&ndash; Bootstrap JS &ndash;&gt;-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>-->
+<!--    <script>-->
+<!--        $(document).ready(function() {-->
+<!--            $.ajax({-->
+<!--                url: 'http://127.0.0.1:8000/get/feedback/',  // URL of your Django view-->
+<!--                type: 'GET',-->
+<!--                dataType: 'json',-->
+<!--                success: function(response) {-->
+<!--                    var formattedData = '';-->
+<!--                    if (response.hasOwnProperty('data')) {-->
+<!--                        $.each(response.data, function(index, entry) {-->
+<!--                            formattedData += '<div class="feedback-item">';-->
+<!--                            formattedData += '<i class="far fa-person feedback-icon"></i>';-->
+<!--                            formattedData += '<p><strong>Name:</strong> ' + entry.name + '</p>';-->
+<!--                            formattedData += '<p><strong>Feedback:</strong> ' + entry.feedback + '</p>';-->
+<!--                            formattedData += '</div>';-->
+<!--                        });-->
+<!--                        $('#responseData').html(formattedData);-->
+<!--                    } else {-->
+<!--                        console.error('Error: "data" key not found in response.');-->
+<!--                    }-->
+<!--                },-->
+<!--                error: function(xhr, status, error) {-->
+<!--                    console.error('Error:', error);-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Example</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #responseData {
+            margin-top: 30px;
+        }
+        .feedback-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+        .feedback-item:hover {
+            background-color: #e9e9e9;
+        }
+        .feedback-item p {
+            margin-bottom: 5px;
+        }
+        .feedback-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        /* Customizing the navbar */
+        .navbar {
+            background-color: #007bff; /* Blue color */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">AJAX Example</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto">
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="#">Home</a>-->
+<!--                    </li>-->
+                    <li class="nav-item">
+                    <h1><a  style="color:#33CAFF" class="nav-link" href="/home/">HOME</a></h1>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 style="color:#8AFF33">आर के फायनान्शिअल विषय इतर व्यक्ती काय म्हणतात आणि लोकांच्या आयुष्यात कसे परिवर्तन झाले तुम्ही स्वतः बघा</h1>
+        <div id="responseData"></div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Font Awesome JS -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: '/get/feedback/',  // URL of your Django view
+                type: 'GET',
+                dataType: 'json',
+                success: function(response) {
+                    var formattedData = '';
+                    if (response.hasOwnProperty('data')) {
+                        $.each(response.data, function(index, entry) {
+                            formattedData += '<div class="feedback-item">';
+                            formattedData += '<p><strong>Name:</strong> ' + entry.name + '</p>';
+                            formattedData += '<p><strong>Feedback:</strong> ' + entry.feedback + '</p>';
+                            formattedData += '</div>';
+                        });
+                        $('#responseData').html(formattedData);
+                    } else {
+                        console.error('Error: "data" key not found in response.');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

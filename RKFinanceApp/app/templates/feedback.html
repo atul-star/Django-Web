@@ -1,0 +1,877 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width,initial-scale=1.0">-->
+<!--    <title>Responsive Form Card</title>-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">-->
+<!--    <link rel="stylesheet" href="index.css">-->
+<!--    <style>-->
+<!--        /* Global styles */-->
+<!--        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');-->
+
+<!--        body {-->
+<!--            margin: 0;-->
+<!--            display: flex;-->
+<!--            flex-direction: column;-->
+<!--            min-height: 100vh;-->
+<!--            background-color: #bde5d2;-->
+<!--            font-family: 'Poppins', sans-serif;-->
+<!--        }-->
+
+<!--        h1 {-->
+<!--            color: green;-->
+<!--            text-align: center;-->
+<!--            margin-top: 30px;-->
+<!--        }-->
+
+<!--        /* Form styles */-->
+<!--        .form-box {-->
+<!--            background-color: #fff;-->
+<!--            box-shadow: 0 0 10px rgba(36, 67, 40, 0.8);-->
+<!--            padding: 15px;-->
+<!--            border-radius: 8px;-->
+<!--            width: 90%; /* Adjusted width for responsiveness */-->
+<!--            max-width: 500px; /* Added max-width */-->
+<!--            margin: 0 auto;-->
+<!--            margin-top: 30px;-->
+<!--        }-->
+
+<!--        form {-->
+<!--            max-width: 400px;-->
+<!--            margin: 0 auto;-->
+<!--        }-->
+
+<!--        label {-->
+<!--            display: block;-->
+<!--            margin-bottom: 8px;-->
+<!--            font-size: 17px;-->
+<!--            color: green;-->
+<!--            font-weight: 600;-->
+<!--        }-->
+
+<!--        input,-->
+<!--        textarea {-->
+<!--            width: 100%;-->
+<!--            padding: 8px;-->
+<!--            margin-bottom: 12px;-->
+<!--            box-sizing: border-box;-->
+<!--            border-radius: 10px;-->
+<!--        }-->
+
+<!--        button {-->
+<!--            background-color: #368b44;-->
+<!--            color: #fff;-->
+<!--            padding: 10px;-->
+<!--            border: none;-->
+<!--            border-radius: 25px;-->
+<!--            cursor: pointer;-->
+<!--            width: 100%;-->
+<!--            font-size: 15px;-->
+<!--            transition: .2s linear;-->
+<!--        }-->
+
+<!--        button:hover {-->
+<!--            background-color: #0a6808;-->
+<!--            border: none;-->
+<!--            transform: translateY(-10px);-->
+<!--        }-->
+
+<!--        /* Modal styles */-->
+<!--        .modal {-->
+<!--            display: none;-->
+<!--            position: fixed;-->
+<!--            z-index: 1;-->
+<!--            left: 0;-->
+<!--            top: 0;-->
+<!--            width: 100%;-->
+<!--            height: 100%;-->
+<!--            overflow: auto;-->
+<!--            background-color: rgb(0, 0, 0);-->
+<!--            background-color: rgba(0, 0, 0, 0.4);-->
+<!--            padding-top: 60px;-->
+<!--        }-->
+
+<!--        .modal-content {-->
+<!--            background-color: #fefefe;-->
+<!--            margin: 5% auto;-->
+<!--            padding: 20px;-->
+<!--            border: 1px solid #888;-->
+<!--            width: 80%;-->
+<!--            max-width: 400px;-->
+<!--            border-radius: 10px;-->
+<!--        }-->
+
+<!--        .close {-->
+<!--            color: #aaa;-->
+<!--            float: right;-->
+<!--            font-size: 28px;-->
+<!--            font-weight: bold;-->
+<!--        }-->
+
+<!--        .close:hover,-->
+<!--        .close:focus {-->
+<!--            color: black;-->
+<!--            text-decoration: none;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+
+<!--    </style>-->
+<!--</head>-->
+
+<!--<body>-->
+
+<!--    &lt;!&ndash; Page Content &ndash;&gt;-->
+<!--    <h1>आर.के फाइनेंशियल</h1>-->
+<!--    <div class="form-box">-->
+<!--        <div class="textup">-->
+<!--            <i class="fa fa-solid fa-clock"></i>-->
+<!--            It only takes two minutes!!-->
+<!--        </div>-->
+<!--        <form id="feedbackForm" action="http://127.0.0.1:8000/save/feedback/" method="post">-->
+<!--            <label for="uname">-->
+<!--                <i class="fa fa-solid fa-user"></i>-->
+<!--                Name-->
+<!--            </label>-->
+<!--            <input type="text" id="uname" name="uname" required>-->
+
+<!--            <label for="email">-->
+<!--                <i class="fa fa-solid fa-envelope"></i>-->
+<!--                Email Address-->
+<!--            </label>-->
+<!--            <input type="email" id="email" name="email" required>-->
+
+<!--            <label for="phone">-->
+<!--                <i class="fa-solid fa-phone"></i>-->
+<!--                Phone No-->
+<!--            </label>-->
+<!--            <input type="tel" id="phone" name="phone" required>-->
+
+<!--            <label>-->
+<!--                <i class="fa-solid fa-face-smile"></i>-->
+<!--                Do you satisfy with our service?-->
+<!--            </label>-->
+<!--            <div class="radio-group">-->
+<!--                <input type="radio" id="yes" name="satisfy" value="yes" checked>-->
+<!--                <label for="yes">Yes</label>-->
+
+<!--                <input type="radio" id="no" name="satisfy" value="no">-->
+<!--                <label for="no">No</label>-->
+<!--            </div>-->
+
+<!--            <label for="msg">-->
+<!--                <i class="fa-solid fa-comments" style="margin-right: 3px;"></i>-->
+<!--                Write your Feedback:-->
+<!--            </label>-->
+<!--            <textarea id="msg" name="msg" rows="4" cols="10" required></textarea>-->
+<!--            <button type="submit">Submit</button>-->
+<!--        </form>-->
+<!--        &lt;!&ndash; Modal &ndash;&gt;-->
+<!--        <div id="feedbackModal" class="modal">-->
+<!--            &lt;!&ndash; Modal content &ndash;&gt;-->
+<!--            <div class="modal-content">-->
+<!--                <span class="close">&times;</span>-->
+<!--                <p style="color:red">Feedback submitted successfully! Thank you</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <script>-->
+<!--        // Get the modal-->
+<!--        var modal = document.getElementById("feedbackModal");-->
+
+<!--        // Get the <span> element that closes the modal-->
+<!--        var span = document.getElementsByClassName("close")[0];-->
+
+<!--        // When the user clicks on the button, open the modal-->
+<!--        document.getElementById('feedbackForm').addEventListener('submit', function(event) {-->
+<!--            // Prevent the default form submission-->
+<!--            event.preventDefault();-->
+
+<!--            // Display the modal-->
+<!--            modal.style.display = "block";-->
+
+<!--            // Hide the modal after 3 seconds (3000 milliseconds)-->
+<!--            setTimeout(function() {-->
+<!--                modal.style.display = "none";-->
+<!--                // Redirect to the home page after hiding the modal-->
+<!--                window.location.href = "/home";-->
+<!--            }, 3000);-->
+<!--        });-->
+
+<!--        // When the user clicks on <span> (x), close the modal-->
+<!--        span.onclick = function() {-->
+<!--            modal.style.display = "none";-->
+<!--        }-->
+
+<!--        // When the user clicks anywhere outside of the modal, close it-->
+<!--        window.onclick = function(event) {-->
+<!--            if (event.target == modal) {-->
+<!--                modal.style.display = "none";-->
+<!--            }-->
+<!--        }-->
+<!--    </script>-->
+
+<!--</body>-->
+
+<!--</html>-->
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width,initial-scale=1.0">-->
+<!--    <title>Responsive Form Card</title>-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">-->
+<!--    <link rel="stylesheet" href="index.css">-->
+<!--    <style>-->
+<!--        /* Global styles */-->
+<!--        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');-->
+
+<!--        body {-->
+<!--            margin: 0;-->
+<!--            display: flex;-->
+<!--            flex-direction: column;-->
+<!--            min-height: 100vh;-->
+<!--            background-color: #bde5d2;-->
+<!--            font-family: 'Poppins', sans-serif;-->
+<!--        }-->
+
+<!--        h1 {-->
+<!--            color: green;-->
+<!--            text-align: center;-->
+<!--            margin-top: 30px;-->
+<!--        }-->
+
+<!--        /* Form styles */-->
+<!--        .form-box {-->
+<!--            background-color: #fff;-->
+<!--            box-shadow: 0 0 10px rgba(36, 67, 40, 0.8);-->
+<!--            padding: 15px;-->
+<!--            border-radius: 8px;-->
+<!--            width: 90%; /* Adjusted width for responsiveness */-->
+<!--            max-width: 500px; /* Added max-width */-->
+<!--            margin: 0 auto;-->
+<!--            margin-top: 30px;-->
+<!--        }-->
+
+<!--        form {-->
+<!--            max-width: 400px;-->
+<!--            margin: 0 auto;-->
+<!--        }-->
+
+<!--        label {-->
+<!--            display: block;-->
+<!--            margin-bottom: 8px;-->
+<!--            font-size: 17px;-->
+<!--            color: green;-->
+<!--            font-weight: 600;-->
+<!--        }-->
+
+<!--        input,-->
+<!--        textarea {-->
+<!--            width: 100%;-->
+<!--            padding: 8px;-->
+<!--            margin-bottom: 12px;-->
+<!--            box-sizing: border-box;-->
+<!--            border-radius: 10px;-->
+<!--        }-->
+
+<!--        button {-->
+<!--            background-color: #368b44;-->
+<!--            color: #fff;-->
+<!--            padding: 10px;-->
+<!--            border: none;-->
+<!--            border-radius: 25px;-->
+<!--            cursor: pointer;-->
+<!--            width: 100%;-->
+<!--            font-size: 15px;-->
+<!--            transition: .2s linear;-->
+<!--        }-->
+
+<!--        button:hover {-->
+<!--            background-color: #0a6808;-->
+<!--            border: none;-->
+<!--            transform: translateY(-10px);-->
+<!--        }-->
+
+<!--        /* Modal styles */-->
+<!--        .modal {-->
+<!--            display: none;-->
+<!--            position: fixed;-->
+<!--            z-index: 1;-->
+<!--            left: 0;-->
+<!--            top: 0;-->
+<!--            width: 100%;-->
+<!--            height: 100%;-->
+<!--            overflow: auto;-->
+<!--            background-color: rgba(0, 0, 0, 0.4);-->
+<!--            padding-top: 60px;-->
+<!--        }-->
+
+<!--        .modal-content {-->
+<!--            background-color: #fefefe;-->
+<!--            margin: 5% auto;-->
+<!--            padding: 20px;-->
+<!--            border: 1px solid #888;-->
+<!--            width: 80%;-->
+<!--            max-width: 400px;-->
+<!--            border-radius: 10px;-->
+<!--        }-->
+
+<!--        .close {-->
+<!--            color: #aaa;-->
+<!--            float: right;-->
+<!--            font-size: 28px;-->
+<!--            font-weight: bold;-->
+<!--        }-->
+
+<!--        .close:hover,-->
+<!--        .close:focus {-->
+<!--            color: black;-->
+<!--            text-decoration: none;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+
+<!--    </style>-->
+<!--</head>-->
+
+<!--<body>-->
+
+<!--    &lt;!&ndash; Page Content &ndash;&gt;-->
+<!--    <h1>आर.के फाइनेंशियल</h1>-->
+<!--    <div class="form-box">-->
+<!--        <div class="textup">-->
+<!--            <i class="fa fa-solid fa-clock"></i>-->
+<!--            It only takes two minutes!!-->
+<!--        </div>-->
+<!--        <form id="feedbackForm" action="save/feedback/" method="post">-->
+<!--			{% csrf_token %}-->
+<!--            <label for="uname">-->
+<!--                <i class="fa fa-solid fa-user"></i>-->
+<!--                Name-->
+<!--            </label>-->
+<!--            <input type="text" id="uname" name="uname" required>-->
+
+<!--            <label for="email">-->
+<!--                <i class="fa fa-solid fa-envelope"></i>-->
+<!--                Email Address-->
+<!--            </label>-->
+<!--            <input type="email" id="email" name="email" required>-->
+
+<!--            <label for="phone">-->
+<!--                <i class="fa-solid fa-phone"></i>-->
+<!--                Phone No-->
+<!--            </label>-->
+<!--            <input type="tel" id="phone" name="phone" required>-->
+
+<!--            <label>-->
+<!--                <i class="fa-solid fa-face-smile"></i>-->
+<!--                Do you satisfy with our service?-->
+<!--            </label>-->
+<!--            <div class="radio-group">-->
+<!--                <input type="radio" id="yes" name="satisfy" value="yes" checked>-->
+<!--                <label for="yes">Yes</label>-->
+
+<!--                <input type="radio" id="no" name="satisfy" value="no">-->
+<!--                <label for="no">No</label>-->
+<!--            </div>-->
+
+<!--            <label for="msg">-->
+<!--                <i class="fa-solid fa-comments" style="margin-right: 3px;"></i>-->
+<!--                Write your Feedback:-->
+<!--            </label>-->
+<!--            <textarea id="msg" name="msg" rows="4" cols="10" required></textarea>-->
+<!--            <button type="submit">Submit</button>-->
+<!--        </form>-->
+<!--        &lt;!&ndash; Modal &ndash;&gt;-->
+<!--        <div id="feedbackModal" class="modal">-->
+<!--            &lt;!&ndash; Modal content &ndash;&gt;-->
+<!--            <div class="modal-content">-->
+<!--                <span class="close">&times;</span>-->
+<!--                <p style="color:red">Feedback submitted successfully! Thank you</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+<!--</body>-->
+
+<!--</html>-->
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width,initial-scale=1.0">-->
+<!--    <title>Responsive Form Card</title>-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">-->
+<!--    <link rel="stylesheet" href="index.css">-->
+<!--    <style>-->
+<!--        /* Global styles */-->
+<!--        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');-->
+
+<!--        body {-->
+<!--            margin: 0;-->
+<!--            display: flex;-->
+<!--            flex-direction: column;-->
+<!--            min-height: 100vh;-->
+<!--            background-color: #bde5d2;-->
+<!--            font-family: 'Poppins', sans-serif;-->
+<!--        }-->
+
+<!--        h1 {-->
+<!--            color: green;-->
+<!--            text-align: center;-->
+<!--            margin-top: 30px;-->
+<!--        }-->
+
+<!--        /* Form styles */-->
+<!--        .form-box {-->
+<!--            background-color: #fff;-->
+<!--            box-shadow: 0 0 10px rgba(36, 67, 40, 0.8);-->
+<!--            padding: 15px;-->
+<!--            border-radius: 8px;-->
+<!--            width: 90%; /* Adjusted width for responsiveness */-->
+<!--            max-width: 500px; /* Added max-width */-->
+<!--            margin: 0 auto;-->
+<!--            margin-top: 30px;-->
+<!--        }-->
+
+<!--        form {-->
+<!--            max-width: 400px;-->
+<!--            margin: 0 auto;-->
+<!--        }-->
+
+<!--        label {-->
+<!--            display: block;-->
+<!--            margin-bottom: 8px;-->
+<!--            font-size: 17px;-->
+<!--            color: green;-->
+<!--            font-weight: 600;-->
+<!--        }-->
+
+<!--        input,-->
+<!--        textarea {-->
+<!--            width: 100%;-->
+<!--            padding: 8px;-->
+<!--            margin-bottom: 12px;-->
+<!--            box-sizing: border-box;-->
+<!--            border-radius: 10px;-->
+<!--        }-->
+
+<!--        button {-->
+<!--            background-color: #368b44;-->
+<!--            color: #fff;-->
+<!--            padding: 10px;-->
+<!--            border: none;-->
+<!--            border-radius: 25px;-->
+<!--            cursor: pointer;-->
+<!--            width: 100%;-->
+<!--            font-size: 15px;-->
+<!--            transition: .2s linear;-->
+<!--        }-->
+
+<!--        button:hover {-->
+<!--            background-color: #0a6808;-->
+<!--            border: none;-->
+<!--            transform: translateY(-10px);-->
+<!--        }-->
+
+<!--        /* Modal styles */-->
+<!--        .modal {-->
+<!--            display: none;-->
+<!--            position: fixed;-->
+<!--            z-index: 1;-->
+<!--            left: 0;-->
+<!--            top: 0;-->
+<!--            width: 100%;-->
+<!--            height: 100%;-->
+<!--            overflow: auto;-->
+<!--            background-color: rgba(0, 0, 0, 0.4);-->
+<!--            padding-top: 60px;-->
+<!--        }-->
+
+<!--        .modal-content {-->
+<!--            background-color: #fefefe;-->
+<!--            margin: 5% auto;-->
+<!--            padding: 20px;-->
+<!--            border: 1px solid #888;-->
+<!--            width: 80%;-->
+<!--            max-width: 400px;-->
+<!--            border-radius: 10px;-->
+<!--        }-->
+
+<!--        .close {-->
+<!--            color: #aaa;-->
+<!--            float: right;-->
+<!--            font-size: 28px;-->
+<!--            font-weight: bold;-->
+<!--        }-->
+
+<!--        .close:hover,-->
+<!--        .close:focus {-->
+<!--            color: black;-->
+<!--            text-decoration: none;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+
+<!--    </style>-->
+<!--</head>-->
+
+<!--<body>-->
+
+<!--    &lt;!&ndash; Page Content &ndash;&gt;-->
+<!--    <h1>आर.के फाइनेंशियल</h1>-->
+<!--    <div class="form-box">-->
+<!--        <div class="textup">-->
+<!--            <i class="fa fa-solid fa-clock"></i>-->
+<!--            It only takes two minutes!!-->
+<!--        </div>-->
+<!--        <form id="feedbackForm" action="save/feedback/" method="post">-->
+<!--            {% csrf_token %}-->
+<!--            <label for="uname">-->
+<!--                <i class="fa fa-solid fa-user"></i>-->
+<!--                Name-->
+<!--            </label>-->
+<!--            <input type="text" id="uname" name="uname" required>-->
+
+<!--            <label for="email">-->
+<!--                <i class="fa fa-solid fa-envelope"></i>-->
+<!--                Email Address-->
+<!--            </label>-->
+<!--            <input type="email" id="email" name="email" required>-->
+
+<!--            <label for="phone">-->
+<!--                <i class="fa-solid fa-phone"></i>-->
+<!--                Phone No-->
+<!--            </label>-->
+<!--            <input type="tel" id="phone" name="phone" required>-->
+
+<!--            <label>-->
+<!--                <i class="fa-solid fa-face-smile"></i>-->
+<!--                Do you satisfy with our service?-->
+<!--            </label>-->
+<!--            <div class="radio-group">-->
+<!--                <input type="radio" id="yes" name="satisfy" value="yes" checked>-->
+<!--                <label for="yes">Yes</label>-->
+
+<!--                <input type="radio" id="no" name="satisfy" value="no">-->
+<!--                <label for="no">No</label>-->
+<!--            </div>-->
+
+<!--            <label for="msg">-->
+<!--                <i class="fa-solid fa-comments" style="margin-right: 3px;"></i>-->
+<!--                Write your Feedback:-->
+<!--            </label>-->
+<!--            <textarea id="msg" name="msg" rows="4" cols="10" required></textarea>-->
+<!--            <button type="submit">Submit</button>-->
+<!--        </form>-->
+<!--        &lt;!&ndash; Modal &ndash;&gt;-->
+<!--        <div id="feedbackModal" class="modal">-->
+<!--            &lt;!&ndash; Modal content &ndash;&gt;-->
+<!--            <div class="modal-content">-->
+<!--                <span class="close">&times;</span>-->
+<!--                <p style="color:red">Feedback submitted successfully! Thank you</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <script>-->
+<!--        // Get the modal-->
+<!--        var modal = document.getElementById("feedbackModal");-->
+
+<!--        // Get the <span> element that closes the modal-->
+<!--        var span = document.getElementsByClassName("close")[0];-->
+
+<!--        // When the user clicks on the button, open the modal-->
+<!--        document.getElementById('feedbackForm').addEventListener('submit', function(event) {-->
+<!--            // Prevent the default form submission-->
+<!--            event.preventDefault();-->
+
+<!--            // Display the modal-->
+<!--            modal.style.display = "block";-->
+
+<!--            // Hide the modal after 3 seconds (3000 milliseconds)-->
+<!--            setTimeout(function() {-->
+<!--                modal.style.display = "none";-->
+<!--                // Redirect to the home page after hiding the modal-->
+<!--                window.location.href = "/home";-->
+<!--            }, 3000);-->
+<!--        });-->
+
+<!--        // When the user clicks on <span> (x), close the modal-->
+<!--        span.onclick = function() {-->
+<!--            modal.style.display = "none";-->
+<!--        }-->
+
+<!--        // When the user clicks anywhere outside of the modal, close it-->
+<!--        window.onclick = function(event) {-->
+<!--            if (event.target == modal) {-->
+<!--                modal.style.display = "none";-->
+<!--            }-->
+<!--        }-->
+<!--    </script>-->
+
+<!--</body>-->
+
+<!--</html>-->
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Responsive Form Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Global styles */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #bde5d2;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h1 {
+            color: green;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* Form styles */
+        .form-box {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(36, 67, 40, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            width: 90%; /* Adjusted width for responsiveness */
+            max-width: 500px; /* Added max-width */
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 17px;
+            color: green;
+            font-weight: 600;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: #368b44;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 15px;
+            transition: .2s linear;
+        }
+
+        button:hover {
+            background-color: #0a6808;
+            border: none;
+            transform: translateY(-10px);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Page Content -->
+    <h1>आर.के फाइनेंशियल</h1>
+    <div class="form-box">
+        <div class="textup">
+            <i class="fa fa-solid fa-clock"></i>
+            It only takes two minutes!!
+        </div>
+        <form id="feedbackForm" action="save/feedback/" method="post">
+            {% csrf_token %}
+            <label for="uname">
+                <i class="fa fa-solid fa-user"></i>
+                Name
+            </label>
+            <input type="text" id="uname" name="uname" required>
+
+            <label for="email">
+                <i class="fa fa-solid fa-envelope"></i>
+                Email Address
+            </label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">
+                <i class="fa-solid fa-phone"></i>
+                Phone No
+            </label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label>
+                <i class="fa-solid fa-face-smile"></i>
+                Do you satisfy with our service?
+            </label>
+            <div class="radio-group">
+                <input type="radio" id="yes" name="satisfy" value="yes" checked>
+                <label for="yes">Yes</label>
+
+                <input type="radio" id="no" name="satisfy" value="no">
+                <label for="no">No</label>
+            </div>
+
+            <label for="msg">
+                <i class="fa-solid fa-comments" style="margin-right: 3px;"></i>
+                Write your Feedback:
+            </label>
+            <textarea id="msg" name="msg" rows="4" cols="10" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <!-- Modal -->
+        <div id="feedbackModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p style="color:red">Feedback submitted successfully! Thank you</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      // Get the modal
+var modal = document.getElementById("feedbackModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+    // Prevent the default form submission
+    event.preventDefault();
+
+    // Serialize form data
+    var formData = new FormData(document.getElementById('feedbackForm'));
+
+    // Send form data to the backend
+    fetch('save/feedback/', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => {
+        if (response.ok) {
+            // Display the modal if the response is successful
+            modal.style.display = "block";
+
+            // Hide the modal after 3 seconds
+            setTimeout(function() {
+                modal.style.display = "none";
+                // Redirect to the home page after hiding the modal
+                window.location.href = "/home";
+            }, 3000);
+        } else {
+            // Handle errors if any
+            console.error('Error submitting feedback:', response.statusText);
+        }
+    })
+    .catch(error => {
+        console.error('Error submitting feedback:', error);
+    });
+});
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+    </script>
+
+</body>
+
+</html>
