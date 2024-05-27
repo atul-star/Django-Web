@@ -33,4 +33,4 @@ urlpatterns = [
     path('save/feedback/', save_feedback, name='feedback'),
     path('get/feedback/', get_feedback, name='feedback'),
     path('display_feedback/', display_feedback, name='feedback'),
-]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
