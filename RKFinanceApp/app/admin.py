@@ -1,12 +1,12 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Contact, Feedback, Cement, Oil
+from .models import Contact, Feedback, Cement, Oil, Withdraw
 # from django.contrib import admin
 
 # Customize site header and title
-admin.site.site_header = 'आर.के फाइनेंशियल'
-admin.site.site_title = 'आर.के फाइनेंशियल'
+admin.site.site_header = 'आर के इंटरप्राईज'
+admin.site.site_title = 'आर के इंटरप्राईज'
 
 # admin.site.register(Contact)
 
@@ -247,8 +247,10 @@ from io import BytesIO
 from reportlab.lib.pagesizes import letter
 from reportlab.lib import colors
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
 from reportlab.lib.units import inch
+
+
 
 
 def generate_pdf_for_oil(oil):
@@ -378,3 +380,148 @@ class OilAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Oil, OilAdmin)
+
+
+
+
+
+def generate_pdf_for_withdraw(obj):
+    buffer = BytesIO()
+    doc = SimpleDocTemplate(buffer, pagesize=letter)
+
+    # Styles for heading and table
+    styles = getSampleStyleSheet()
+    heading_style = ParagraphStyle(
+        'Heading1',
+        parent=styles['Title'],
+        fontSize=18,
+        alignment=1,  # Centered
+        spaceAfter=12
+    )
+    normal_style = styles['Normal']
+
+    # Heading
+    heading = Paragraph("RK Financial Withdraw Slip", heading_style)
+
+    # Define data for the table
+    data = [
+        ["Field", "Value"],
+        ["Name", str(obj.name)],
+        ["Date", obj.date],
+        ["Withdraw Amount", obj.amount],
+        # Add more fields as needed
+    ]
+
+    # Create table with data
+    table = Table(data, colWidths=[2 * inch, 4 * inch])  # Adjust column widths if needed
+
+    # Define table style
+    style = TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
+        ('GRID', (0, 0), (-1, -1), 1, colors.black),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTNAME', (0, 1), (-1, -1), 'Helvetica'),
+        ('FONTSIZE', (0, 0), (-1, 0), 12),
+        ('FONTSIZE', (0, 1), (-1, -1), 10),
+    ])
+    table.setStyle(style)
+    large_spacer = Paragraph("<br/><br/><br/><br/><br/><br/><br/><br/>", normal_style)
+    # Signature text
+    client_signature = Paragraph("Client Signature:", normal_style)
+    authority = Paragraph("Authority:", normal_style)
+
+    # Create a table for signatures with proper alignment
+    signatures_data = [
+        [client_signature, authority]
+    ]
+    signatures_table = Table(signatures_data, colWidths=[3 * inch, 3 * inch])
+    signatures_style = TableStyle([
+        ('ALIGN', (0, 0), (0, 0), 'LEFT'),
+        ('ALIGN', (1, 0), (1, 0), 'RIGHT'),
+        ('FONTNAME', (0, 0), (-1, -1), 'Helvetica'),
+        ('FONTSIZE', (0, 0), (-1, -1), 10),
+        ('VALIGN', (0, 0), (-1, -1), 'TOP')
+    ])
+    signatures_table.setStyle(signatures_style)
+
+    # Create spacers for spacing between table, signature, and authority sections
+    space_after_table = Spacer(1, 0.5 * inch)  # Adjust the height as needed for spacing
+    space_between_signatures = Spacer(1, 0.75 * inch)  # Adjust the height as needed for spacing
+
+    # Build the PDF
+    elements = [
+        heading,
+        table,
+        space_after_table,
+        large_spacer,# Space between the table and the signature section
+        signatures_table,
+        space_between_signatures  # Space between signature and authority
+    ]
+    doc.build(elements)
+
+    buffer.seek(0)
+    return buffer
+class WithdrawAdmin(admin.ModelAdmin):
+
+    def response_add(self, request, obj, post_url_continue=None):
+        response = super().response_add(request, obj, post_url_continue)
+        # Add a success message after the object is added
+        messages.success(request, "Please get your pdf from Rameshwar for Withdrawal")
+
+        # Generate PDF
+        pdf_buffer = generate_pdf_for_withdraw(obj)
+
+        # Email details
+        subject = 'RK Financial Withdraw Amount Slip'
+        message = 'Please find the Withdraw Slip attached.'
+        from_email = settings.DEFAULT_FROM_EMAIL
+
+        recipient_list = [settings.ADMIN_EMAIL]  # Ensure you set this in your settings.py
+
+
+        # Create email
+        email = EmailMessage(
+            subject,
+            message,
+            from_email,
+            recipient_list
+        )
+        email.attach('withdraw_slip.pdf', pdf_buffer.getvalue(), 'application/pdf')
+        email.send()
+
+        return response
+
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        if request.user.is_superuser:
+            return qs
+        if request.user.groups.filter(name='My Users').exists():
+            return qs.none()
+        return qs
+
+    def has_change_permission(self, request, obj=None):
+        if request.user.is_superuser:
+            return True
+        if request.user.groups.filter(name='My Users').exists():
+            return False
+        return super().has_change_permission(request, obj)
+
+    def has_view_permission(self, request, obj=None):
+        if request.user.is_superuser:
+            return True
+        if request.user.groups.filter(name='My Users').exists():
+            return False
+        return super().has_view_permission(request, obj)
+
+    def has_delete_permission(self, request, obj=None):
+        return self.has_change_permission(request, obj)
+
+    def save_model(self, request, obj, form, change):
+        if not change:  # New object
+            obj.user = request.user
+        super().save_model(request, obj, form, change)
+
+admin.site.register(Withdraw,WithdrawAdmin)
