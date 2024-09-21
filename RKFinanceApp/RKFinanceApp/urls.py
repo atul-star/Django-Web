@@ -17,10 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from app.views import *
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('', include('app.urls')),
-    # path('jet/', include('jet.urls', 'jet')),
     path('admin/', admin.site.urls),
     path('contact/', contact, name='contact'),
     path('contact/home/', home, name='contact'),
@@ -32,4 +33,4 @@ urlpatterns = [
     path('save/feedback/', save_feedback, name='feedback'),
     path('get/feedback/', get_feedback, name='feedback'),
     path('display_feedback/', display_feedback, name='feedback'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

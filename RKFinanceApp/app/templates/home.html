@@ -1,10 +1,793 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>आर.के फाइनेंशियल</title>-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+<!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">-->
+
+<!--    <style>-->
+<!--        h1 {-->
+<!--            color: #ff69b4;-->
+<!--        }-->
+<!--        p {-->
+<!--            color: #000;-->
+<!--        }-->
+<!--        footer {-->
+<!--            background: #007bff;-->
+<!--            color: white;-->
+<!--            padding: 20px 0;-->
+<!--            text-align: center;-->
+<!--        }-->
+<!--        .marquee {-->
+<!--            white-space: nowrap;-->
+<!--            overflow: hidden;-->
+<!--            display: inline-block;-->
+<!--            animation: marquee 10s linear infinite;-->
+<!--        }-->
+<!--        .marquee p {-->
+<!--            display: inline-block;-->
+<!--        }-->
+<!--        @keyframes marquee {-->
+<!--            0% {-->
+<!--                transform: translateX(100%);-->
+<!--            }-->
+<!--            100% {-->
+<!--                transform: translateX(-100%);-->
+<!--            }-->
+<!--        }-->
+<!--        .fa {-->
+<!--            display: inline-block;-->
+<!--            font: normal normal normal 14px/1 FontAwesome;-->
+<!--            font-size: inherit;-->
+<!--            text-rendering: auto;-->
+<!--            -webkit-font-smoothing: antialiased;-->
+<!--            -moz-osx-font-smoothing: grayscale;-->
+<!--        }-->
+
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+<!--    <div class="container">-->
+<!--        <a class="navbar-brand" href="" style="color:brown">आर.के फाइनेंशियल</a>-->
+<!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">-->
+<!--&lt;!&ndash;                <li class="nav-item">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <a class="nav-link active" aria-current="page" href="">Home</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                </li>&ndash;&gt;-->
+<!--                <li class="nav-item">-->
+<!--                    <a  style="color:blue" class="nav-link" href="/contact/">संपर्क</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--            <form class="d-flex">-->
+<!--                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--                <button class="btn btn-outline-success" type="submit">Search</button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</nav>-->
+<!--<div class="wrapper">-->
+<!--    <div class="marquee">-->
+<!--        <h1>आर.के फाइनेंशियलमध्ये आपले स्वागत आहे</h1>-->
+<!--    </div>-->
+<!--&lt;!&ndash;  <div style="text-align: center;">&ndash;&gt;-->
+<!--&lt;!&ndash;    <img  width="50%" height="50%" src="https://etimg.etb2bimg.com/photo/86444984.cms" alt="Description of the image">&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+<!--    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">-->
+<!--  <div class="carousel-inner">-->
+<!--    <div class="carousel-item active">-->
+<!--      <img src="https://etimg.etb2bimg.com/photo/86444984.cms" class="d-block w-100" style="height: 400px;" alt="...">-->
+<!--    </div>-->
+<!--    <div class="carousel-item">-->
+<!--      <img src="https://www.thegef.org/sites/default/files/styles/banner_image/public/2021-11/topics_banner_blendedfinance.jpg?h=4e9a1ef8&itok=wkLt635t" class="d-block w-100" style="height: 400px;"  alt="...">-->
+<!--    </div>-->
+<!--    <div class="carousel-item">-->
+<!--      <img src="https://financeplaninfo.com/wp-content/uploads/2023/02/finance-kya-hai.webp" class="d-block w-100" style="height: 400px;"  alt="...">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">-->
+<!--    <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--    <span class="visually-hidden">Previous</span>-->
+<!--  </button>-->
+<!--  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">-->
+<!--    <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--    <span class="visually-hidden">Next</span>-->
+<!--  </button>-->
+<!--</div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--</div>-->
+<!--<div class="container mt-5">-->
+<!--    <div class="row justify-content-center">-->
+<!--        <div class="col-lg-8">-->
+<!--            <div>-->
+<!--                <p class="text-justify">-->
+<!--                  नमस्कार,मी रामेश्वर कुऱ्हाडे आर के फाइनेंशियल ओनर आणि फाइनेंशियल एडवाइजर. संगायच झाल तर मी छोटया खेड्या गावातील एका सामान्य गरीब मजूरदाराचा मुलगा. कमी वयातच  मला आर्थिक तडजोड कशी असते हे पाहायला मिळाली,आणी परिस्थिति फार कठीण होती. काही चांगल्य लोकांच्या सांगतीमुळे मला पैशाबद्दल गोष्टी समजू लागल्या शब्द कमी पडतील एवढा अनुभव मला मीळाला आणि त्याच कारणामुळे वयाच्या फक्त 30 व्या वर्षी मी आर्थिक स्वतंत्र मिळवले. आणि मला तुम्हाला एवढंच सांगायच की योग्य नाॅलेज तुम्हीं जर घ्याल तर आयुष्यातले पुढचे बरेच प्रोब्लम टाळता येतील. म्हणुन आर के फाइनेंशियल मध्ये इन्वेस्ट करुण आर्थिक स्वतंत्र मीळवा-->
+<!--                </p>-->
+<!--                <h2 style="color:#40E0D0">RAMESHWAR K. KURHADE </h2>-->
+<!--                <h2 style="color:#40E0D0">(R K FINANCIAL OWNER, FINANCIAL ADVISOR </h2>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div><br><br><br>-->
+<!--    <div>-->
+<!--        <h3 style="color:red">काय तूम्ही खालील प्रॉब्लेम ला सामोरे जात आहात </h3>-->
+<!--        <h4>➡️महिन्याच्या शेवटी पगार शिल्लक राहत नाही.</h4>-->
+<!--        <h4>➡️ मुलाच्या वाढत्या शिक्षणाच खर्च</h4>-->
+<!--        <h4>➡️ व्यवसाय वाढीसाठी आर्थिक तरदुत कशी करू</h4>-->
+<!--        <h4>➡️ महागड्या जीवनशैलीचा खर्च</h4>-->
+<!--        <h4>➡️ व्यवसायामध्ये पैशाचा Cash flow मॅनेज कसा करायचा</h4>-->
+<!--        <h4>➡️ घेतलेले कर्ज, परिणामकारक आर्थिक नियोजन करून लवकर कर्जमुक्त कसे होऊ</h4><br><br>-->
+<!--        <h3>जर तुम्ही प्रॉब्लेम ला समोर जात असाल तर तुम्ही एकटे नाही. आजच आर के फायनान्शिअल सोबत संपर्क साधून आपले प्रॉब्लेम सॉल करू शकता.</h3>-->
+<!--    </div><br><br>-->
+<!--    <div>-->
+<!--      <h3 style="color: #74a8c2">आर के फायनान्शियल मध्ये खालील गोष्टी शेअर केल्या जातील: </h3>-->
+<!--      <h4> 1. आर्थिक स्वातंत्र्य मिळवण्यासाठी लागणारी मानसिकता विकसित करणे-->
+<!--यात व्यक्तीला आपले आर्थिक उद्दीष्ट्य प्राप्त करण्यासाठी आवश्यक असलेली मानसिकता विकसित करण्याचे महत्व दाखवले आहे. ही मानसिकता व्यक्तीला आर्थिक निर्णय घेण्यात आणि जोखीम ओळखण्यात मदत करते.</h4>-->
+<!--      <h4>2. आर्थिक स्वातंत्र्य मिळवण्याच्या 7 points आणि ३ money management फॉर्म्युला यात व्यक्तीला आर्थिक स्वातंत्र्य प्राप्त करण्यासाठी लागणार्‍या सात पायऱ्या आणि तीन मुलभूत मनी मॅनेजमेंट फॉर्म्युले सांगितले आहेत.</h4>-->
+<!--      <h4>3. आर्थिक नियोजन करून दिर्घ कालीन संपत्ती कशी मिळवायची ते शिका टप्प्या टप्प्याने येथे व्यक्तीला आर्थिक नियोजन कसे करावे आणि दीर्घकालीन संपत्ती कशी निर्माण करावी हे शिकवले जाते.</h4>-->
+<!--      <h4>4. जाणून घ्या तुमच्या आयुष्यातील पैशाचं महत्त्व यात व्यक्तीला आपले आर्थिक उद्दीष्ट्य प्राप्त करण्यासाठी आवश्यक असलेली मानसिकता विकसित करण्याचे महत्व दाखवले आहे. ही मानसिकता व्यक्तीला आर्थिक निर्णय घेण्यात आणि जोखीम ओळखण्यात मदत करते.</h4>-->
+<!--      <h4>5. समजून घ्या पैशाच्या विज्ञानाचे रहस्य यात व्यक्तीला आर्थिक स्वातंत्र्य प्राप्त करण्यासाठी लागणार्‍या सात पायऱ्या आणि तीन मुलभूत मनी मॅनेजमेंट फॉर्म्युले सांगितले आहेत.</h4>-->
+<!--      <h4>6. येथे व्यक्तीला आर्थिक नियोजन कसे करावे आणि दीर्घकालीन संपत्ती कशी निर्माण करावी हे शिकवले जाते.</h4>-->
+<!--    </div><br><br>-->
+<!--  <div>-->
+<!--    <h3 style="color: #32a8a6">आर के फाइनेंशियल सोबत तुम्हाला मिळतील खास 3 बोनस!</h3>-->
+<!--    <h4>-->
+<!--      1) Budget planner : मनी मैनेजमेंट फॉर्मूला तुम्ही स्वता: साठी वापरू शकाल यसाठी हे बजेट प्लानर तुम्हाला दिले जाईल </h4>-->
+<!--      <h4>2) Important Lessons : ज्या गोष्टी तुम्हाला स्वतः हुन  कोणीच सांगणार नाही अशा महत्वाच्या फाइनेंशियल टिप्स दिले जाईल.</h4>-->
+<!--      <h4>3) Upcoming Session : कर्ज मुक्त आयुष्य कसे जगायचे किंवा वेगवेगळया व्यवसाय मधुन पैस कसे कमावता येतात या विषय माहिती.आर्थिक नियोजन करायची कला शिकून जास्तीत जास्त-->
+<!--      पैसे वाचवायला शिका शिकून घ्या आर्थिक नियोजनाचे ते रहस्य जे श्रीमंत लोक नेहमी वापरत आले आहेत पण सामान्य माणसाला आजही ते माहीत नाही.</h4>-->
+
+<!--  </div>-->
+<!--</div>-->
+<!--<section class="vh-50" style="background-color: #eee;">-->
+<!--    <div class="container h-50">-->
+<!--        <div class="row d-flex justify-content-center align-items-center h-50">-->
+<!--            <div class="col-lg-12 col-xl-11">-->
+<!--                <div class="card text-black" style="border-radius: 25px;">-->
+<!--                    <div class="card-body p-md-5">-->
+<!--                        <div class="row justify-content-center">-->
+<!--                            <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">-->
+<!--                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4"><p style="color:#fcba03">कष्टाने कमावलेल्या पैशांच नियोजन करण्या विषय आर के फाइनेंशियल मध्ये त्वरित रजिस्टर करा आणि बजट प्लानर मिळवा</p>-->
+<!--                                <form  style="background-color: #cc99ff;" class="text-center" id="contactForm" action="save/data/" method="post">-->
+<!--                                    {% csrf_token %}-->
+<!--                                    <label for="name">Name:</label><br>-->
+<!--                                    <input type="text" id="name" name="name" required><br>-->
+<!--                                    <label for="email">Email:</label><br>-->
+<!--                                    <input type="text" id="email" name="email" required><br>-->
+<!--                                    <label for="mobile">Mobile:</label><br>-->
+<!--                                    <input type="text" id="mobile" name="mobile" required><br><br>-->
+<!--                                    <input type="submit" value="Submit">-->
+<!--                                </form>-->
+<!--                                <div id="messageContainer" class="mt-3"></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+<!--<br><br>-->
+<!--<div  style="text-align: center;"><i class='fas fa-hand-point-right' style='font-size:35px;color:green'></i>-->
+<!--  <a href="/feedback" style="color:#00cc66">फीडबॅक फॉर्म भरण्यासाठी येथे क्लिक करा</a><br><br>-->
+<!--    <i class='fas fa-hand-point-right' style='font-size:35px;color:#a8a632'></i>-->
+<!--  <a href="/admin" style="color:#a8a632"> तेल आणि सिमेंटची ऑर्डर देण्यासाठी येथे क्लिक करा</a>-->
+<!--</div>-->
+<!--<br><br>-->
+<!--<footer class="mainfooter" role="contentinfo">-->
+<!--    <div class="footer-middle">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-11">-->
+<!--                    <h4>Follow Us</h4>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-12 copy text-center">-->
+<!--                    <p>&copy; कॉपीराइट 2024 - आर.के फाइनेंशियल. सर्व हक्क राखीव.</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</footer>-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+<!--<script>-->
+<!--    $(document).ready(function() {-->
+<!--        $('#contactForm').on('submit', function(e) {-->
+<!--            e.preventDefault(); // Prevent default form submission-->
+<!--            var formData = $(this).serialize(); // Serialize form data-->
+<!--            var $form = $(this); // Save reference to form for later use-->
+<!--            $.ajax({-->
+<!--                type: 'POST',-->
+<!--                url: $(this).attr('action'),-->
+<!--                data: formData,-->
+<!--                success: function(response) {-->
+<!--                    console.log(response); // Handle successful response-->
+<!--                    $form[0].reset(); // Clear form fields-->
+<!--                    $('#messageContainer').html('<div class="alert alert-success">Form submitted successfully!</div>');-->
+<!--                },-->
+<!--                error: function(xhr, status, error) {-->
+<!--                    console.error(xhr.responseText); // Handle errors-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--    });-->
+
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>आर.के फाइनेंशियल</title>-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">-->
+
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: 'Arial', sans-serif;-->
+<!--            color: #2C3E50; /* Dark Slate Grey */-->
+<!--            background-color: #F5F5F5; /* Light Grey */-->
+<!--        }-->
+<!--        h1, h2, h3, h4 {-->
+<!--            color: #2C3E50; /* Dark Slate Grey */-->
+<!--        }-->
+<!--        h1 {-->
+<!--            color: #009688; /* Teal */-->
+<!--        }-->
+<!--        h2, h3, h4 {-->
+<!--            color: #FF5722; /* Orange */-->
+<!--        }-->
+<!--        p {-->
+<!--            color: #2C3E50; /* Dark Slate Grey */-->
+<!--        }-->
+<!--        .navbar {-->
+<!--            background-color: #ffffff;-->
+<!--            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);-->
+<!--        }-->
+<!--        .navbar-brand {-->
+<!--            color: #009688; /* Teal */-->
+<!--        }-->
+<!--        .navbar-nav .nav-link {-->
+<!--            color: #2C3E50; /* Dark Slate Grey */-->
+<!--        }-->
+<!--        .navbar-nav .nav-link:hover {-->
+<!--            color: #FF5722; /* Orange */-->
+<!--        }-->
+<!--        .carousel-item img {-->
+<!--            height: 400px;-->
+<!--            object-fit: cover;-->
+<!--        }-->
+<!--        .marquee {-->
+<!--            background-color: #009688; /* Teal */-->
+<!--            color: white;-->
+<!--            padding: 10px;-->
+<!--            position: relative;-->
+<!--            overflow: hidden;-->
+<!--        }-->
+<!--        .marquee h1 {-->
+<!--            display: inline-block;-->
+<!--            white-space: nowrap;-->
+<!--            animation: marquee 15s linear infinite;-->
+<!--            font-size: 1.5rem;-->
+<!--            margin: 0;-->
+<!--            padding-left: 100%;-->
+<!--        }-->
+<!--        @keyframes marquee {-->
+<!--            0% {-->
+<!--                transform: translateX(100%);-->
+<!--            }-->
+<!--            100% {-->
+<!--                transform: translateX(-100%);-->
+<!--            }-->
+<!--        }-->
+<!--        .card {-->
+<!--            border-radius: 10px;-->
+<!--            box-shadow: 0 4px 8px rgba(0,0,0,0.1);-->
+<!--        }-->
+<!--        .form-control, .btn {-->
+<!--            border-radius: 20px;-->
+<!--        }-->
+<!--        .footer-middle {-->
+<!--            background-color: #009688; /* Teal */-->
+<!--            color: white;-->
+<!--            padding: 20px 0;-->
+<!--        }-->
+<!--        .footer-middle h4 {-->
+<!--            margin-bottom: 20px;-->
+<!--        }-->
+<!--        .footer-middle .copy {-->
+<!--            margin-top: 20px;-->
+<!--        }-->
+<!--        .btn-primary {-->
+<!--            background-color: #009688; /* Teal */-->
+<!--            border: none;-->
+<!--        }-->
+<!--        .btn-primary:hover {-->
+<!--            background-color: #00796B; /* Darker Teal */-->
+<!--        }-->
+<!--        .alert-success {-->
+<!--            background-color: #d4edda;-->
+<!--            color: #155724;-->
+<!--            border: 1px solid #c3e6cb;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<nav class="navbar navbar-expand-lg navbar-light">-->
+<!--    <div class="container">-->
+<!--        <a class="navbar-brand" href="" style="color:#009688">आर.के फाइनेंशियल</a>-->
+<!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="/contact/">संपर्क</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--            <form class="d-flex ms-3">-->
+<!--                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--                <button class="btn btn-outline-success" type="submit">Search</button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</nav>-->
+
+<!--&lt;!&ndash; Marquee Section &ndash;&gt;-->
+<!--<div class="marquee">-->
+<!--    <h1>आर.के फाइनेंशियलमध्ये आपले स्वागत आहे</h1>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; Carousel &ndash;&gt;-->
+<!--<div id="carouselExampleControls" class="carousel slide">-->
+<!--    <div class="carousel-inner">-->
+<!--        <div class="carousel-item active">-->
+<!--            <img src="https://etimg.etb2bimg.com/photo/86444984.cms" class="d-block w-100" alt="Finance Image 1">-->
+<!--        </div>-->
+<!--        <div class="carousel-item">-->
+<!--            <img src="https://www.thegef.org/sites/default/files/styles/banner_image/public/2021-11/topics_banner_blendedfinance.jpg?h=4e9a1ef8&itok=wkLt635t" class="d-block w-100" alt="Finance Image 2">-->
+<!--        </div>-->
+<!--        <div class="carousel-item">-->
+<!--            <img src="https://financeplaninfo.com/wp-content/uploads/2023/02/finance-kya-hai.webp" class="d-block w-100" alt="Finance Image 3">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">-->
+<!--        <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--        <span class="visually-hidden">Previous</span>-->
+<!--    </button>-->
+<!--    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">-->
+<!--        <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--        <span class="visually-hidden">Next</span>-->
+<!--    </button>-->
+<!--</div>-->
+
+<!--<div class="container mt-5">-->
+<!--    <div class="row justify-content-center">-->
+<!--        <div class="col-lg-8">-->
+<!--            <p class="text-justify">-->
+<!--                नमस्कार, मी रामेश्वर कुऱ्हाडे आर के फाइनेंशियल ओनर आणि फाइनेंशियल एडवायजर. संगायच झाल तर मी छोटया खेड्या गावातील एका सामान्य गरीब मजूरदाराचा मुलगा. कमी वयातच मला आर्थिक तडजोड कशी असते हे पाहायला मिळाली, आणि परिस्थिती फार कठीण होती. काही चांगल्य लोकांच्या सांगतीमुळे मला पैशाबद्दल गोष्टी समजू लागल्या. शब्द कमी पडतील एवढा अनुभव मला मीळाला आणि त्याच कारणामुळे वयाच्या फक्त 30 व्या वर्षी मी आर्थिक स्वतंत्र मिळवले. आणि मला तुम्हाला एवढंच सांगायच की योग्य नाॅलेज तुम्हीं जर घ्याल तर आयुष्यातले पुढचे बरेच प्रोब्लम टाळता येतील. म्हणुन आर के फाइनेंशियल मध्ये इन्वेस्ट करुन आर्थिक स्वतंत्र मिळवा.-->
+<!--            </p>-->
+<!--            <h2>RAMESHWAR K. KURHADE</h2>-->
+<!--            <h2>(R K FINANCIAL OWNER, FINANCIAL ADVISOR)</h2>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="my-5">-->
+<!--        <h3>काय तुम्ही खालील प्रॉब्लेमला सामोरे जात आहात?</h3>-->
+<!--        <h4>➡️ महिन्याच्या शेवटी पगार शिल्लक राहत नाही.</h4>-->
+<!--        <h4>➡️ मुलाच्या वाढत्या शिक्षणाचा खर्च</h4>-->
+<!--        <h4>➡️ व्यवसाय वाढीसाठी आर्थिक तरदूत कशी करू?</h4>-->
+<!--        <h4>➡️ महागड्या जीवनशैलीचा खर्च</h4>-->
+<!--        <h4>➡️ व्यवसायामध्ये पैशाचा Cash flow मॅनेज कसा करायचा?</h4>-->
+<!--        <h4>➡️ घेतलेले कर्ज, परिणामकारक आर्थिक नियोजन करून लवकर कर्जमुक्त कसे होऊ?</h4>-->
+<!--        <h3>जर तुम्ही प्रॉब्लेमला सामोरे जात असाल तर तुम्ही एकटे नाही. आजच आर के फायनान्शिअलसोबत संपर्क साधून आपले प्रॉब्लेम सॉल करा.</h3>-->
+<!--    </div>-->
+<!--    <div class="my-5">-->
+<!--        <h3>आर के फायनान्शियलमध्ये खालील गोष्टी शेअर केल्या जातील:</h3>-->
+<!--        <h4>1. आर्थिक योजनेचे फायदे</h4>-->
+<!--        <h4>2. बजेट प्लानिंग कसे करावे</h4>-->
+<!--        <h4>3. फायनान्शियल लक्षणे आणि त्यांच्यावर मात कशी करावी</h4>-->
+<!--        <h4>4. करायच्या आणि न करायच्या गोष्टी आणि टिप्स व ट्रिक्स</h4>-->
+<!--    </div>-->
+<!--    <div class="my-5">-->
+<!--        <h3>आर के फायनान्शियलसोबत तुम्हाला मिळतील खास 3 बोनस!</h3>-->
+<!--        <h4>1) बजेट प्लानर: मनी मॅनेजमेंट फॉर्म्युला तुम्ही स्वतःसाठी वापरू शकाल.</h4>-->
+<!--        <h4>2) महत्वाच्या अडचणी: ज्या गोष्टी तुम्हाला स्वतःहून कोणीच सांगणार नाही अशा महत्वाच्या फाइनेंशियल टिप्स दिले जातील.</h4>-->
+<!--        <h4>3) आगामी सत्र: कर्जमुक्त आयुष्य कसे जगायचे किंवा वेगवेगळ्या व्यवसायांमधून पैसे कसे कमावता येतात याची माहिती.</h4>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<section class="vh-50" style="background-color: #ffffff;">-->
+<!--    <div class="container h-50">-->
+<!--        <div class="row d-flex justify-content-center align-items-center h-50">-->
+<!--            <div class="col-lg-8">-->
+<!--                <div class="card text-black">-->
+<!--                    <div class="card-body p-md-5">-->
+<!--                        <div class="row justify-content-center">-->
+<!--                            <div class="col-md-12">-->
+<!--                                <p class="text-center h2 fw-bold mb-5 mx-1 mx-md-4 mt-4">-->
+<!--                                    <span style="color:#009688">कष्टाने कमावलेल्या पैशांचं नियोजन करण्यासाठी आर के फाइनेंशियलमध्ये त्वरित रजिस्टर करा आणि बजेट प्लानर मिळवा</span>-->
+<!--                                </p>-->
+<!--                                <form style="background-color: #ffffff;" class="text-center p-4" id="contactForm" action="save/data/" method="post">-->
+<!--                                    {% csrf_token %}-->
+<!--                                    <div class="mb-3">-->
+<!--                                        <label for="name" class="form-label">Name:</label>-->
+<!--                                        <input type="text" id="name" name="name" class="form-control" required>-->
+<!--                                    </div>-->
+<!--                                    <div class="mb-3">-->
+<!--                                        <label for="email" class="form-label">Email:</label>-->
+<!--                                        <input type="email" id="email" name="email" class="form-control" required>-->
+<!--                                    </div>-->
+<!--                                    <div class="mb-3">-->
+<!--                                        <label for="mobile" class="form-label">Mobile:</label>-->
+<!--                                        <input type="text" id="mobile" name="mobile" class="form-control" required>-->
+<!--                                    </div>-->
+<!--                                    <button type="submit" class="btn btn-primary">Submit</button>-->
+<!--                                </form>-->
+<!--                                <div id="messageContainer" class="mt-3"></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<!--<div class="text-center my-5">-->
+<!--    <i class='fas fa-hand-point-right' style='font-size:35px;color:#009688'></i>-->
+<!--    <a href="/feedback" style="color:#009688">फीडबॅक फॉर्म भरण्यासाठी येथे क्लिक करा</a><br><br>-->
+<!--    <i class='fas fa-hand-point-right' style='font-size:35px;color:#FF5722'></i>-->
+<!--    <a href="/admin" style="color:#FF5722">तेल आणि सिमेंटची ऑर्डर देण्यासाठी येथे क्लिक करा</a>-->
+<!--</div>-->
+
+<!--<footer class="footer-middle">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-11">-->
+<!--                <h4 class="text-center">Follow Us</h4>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-12 copy text-center">-->
+<!--                <p>&copy; 2024 आर.के फाइनेंशियल. सर्व हक्क राखीव.</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</footer>-->
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+<!--<script>-->
+<!--    $(document).ready(function() {-->
+<!--        $('#contactForm').on('submit', function(e) {-->
+<!--            e.preventDefault(); // Prevent default form submission-->
+<!--            var formData = $(this).serialize(); // Serialize form data-->
+<!--            var $form = $(this); // Save reference to form for later use-->
+<!--            $.ajax({-->
+<!--                type: 'POST',-->
+<!--                url: $(this).attr('action'),-->
+<!--                data: formData,-->
+<!--                success: function(response) {-->
+<!--                    console.log(response); // Handle successful response-->
+<!--                    $form[0].reset(); // Clear form fields-->
+<!--                    $('#messageContainer').html('<div class="alert alert-success">फॉर्म यशस्वीरित्या सबमिट केला!</div>');-->
+<!--                },-->
+<!--                error: function(xhr, status, error) {-->
+<!--                    console.error(xhr.responseText); // Handle errors-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>आर.के फाइनेंशियल</title>-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">-->
+
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            color: #2C3E50;-->
+<!--            background-color: #F5F5F5;-->
+<!--        }-->
+<!--        h1, h2, h3, h4 {-->
+<!--            color: #2C3E50;-->
+<!--        }-->
+<!--        .navbar {-->
+<!--            background-color: #ffffff;-->
+<!--            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);-->
+<!--        }-->
+<!--        .navbar-brand {-->
+<!--            color: #009688;-->
+<!--        }-->
+<!--        .navbar-nav .nav-link {-->
+<!--            color: #2C3E50;-->
+<!--        }-->
+<!--        .navbar-nav .nav-link:hover {-->
+<!--            color: #FF5722;-->
+<!--        }-->
+<!--        .carousel-item img {-->
+<!--            height: 400px;-->
+<!--            object-fit: cover;-->
+<!--        }-->
+<!--        .marquee-container {-->
+<!--            position: relative;-->
+<!--            overflow: hidden;-->
+<!--            background-color: #FF5722; /* Background color of the marquee */-->
+<!--            color: white; /* Text color of the marquee */-->
+<!--            padding: 10px 0;-->
+<!--            text-align: center;-->
+<!--            white-space: nowrap;-->
+<!--        }-->
+<!--        .marquee-text {-->
+<!--            display: inline-block;-->
+<!--            white-space: nowrap;-->
+<!--            font-size: 1.5rem;-->
+<!--            padding-left: 100%;-->
+<!--            animation: marquee 15s linear infinite;-->
+<!--        }-->
+<!--        @keyframes marquee {-->
+<!--            0% {-->
+<!--                transform: translateX(100%);-->
+<!--            }-->
+<!--            100% {-->
+<!--                transform: translateX(-100%);-->
+<!--            }-->
+<!--        }-->
+<!--        .card {-->
+<!--            border-radius: 10px;-->
+<!--            box-shadow: 0 4px 8px rgba(0,0,0,0.1);-->
+<!--        }-->
+<!--        .form-control, .btn {-->
+<!--            border-radius: 20px;-->
+<!--        }-->
+<!--        .footer-middle {-->
+<!--            background-color: #009688;-->
+<!--            color: white;-->
+<!--            padding: 20px 0;-->
+<!--        }-->
+<!--        .footer-middle h4 {-->
+<!--            margin-bottom: 20px;-->
+<!--        }-->
+<!--        .footer-middle .copy {-->
+<!--            margin-top: 20px;-->
+<!--        }-->
+<!--        .btn-primary {-->
+<!--            background-color: #009688;-->
+<!--            border: none;-->
+<!--        }-->
+<!--        .btn-primary:hover {-->
+<!--            background-color: #00796B;-->
+<!--        }-->
+<!--        .alert-success {-->
+<!--            background-color: #d4edda;-->
+<!--            color: #155724;-->
+<!--            border: 1px solid #c3e6cb;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<nav class="navbar navbar-expand-lg navbar-light">-->
+<!--    <div class="container">-->
+<!--        <a class="navbar-brand" href="" style="color:#009688">आर.के फाइनेंशियल</a>-->
+<!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="/contact/">संपर्क</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--            <form class="d-flex ms-3">-->
+<!--                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--                <button class="btn btn-outline-success" type="submit">Search</button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</nav>-->
+
+<!--&lt;!&ndash; Marquee Section &ndash;&gt;-->
+<!--<div class="marquee-container">-->
+<!--    <div class="marquee-text">-->
+<!--        <h1>आर.के फाइनेंशियलमध्ये आपले स्वागत आहे</h1>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; Carousel &ndash;&gt;-->
+<!--<div id="carouselExampleControls" class="carousel slide">-->
+<!--    <div class="carousel-inner">-->
+<!--        <div class="carousel-item active">-->
+<!--            <img src="https://etimg.etb2bimg.com/photo/86444984.cms" class="d-block w-100" alt="Finance Image 1">-->
+<!--        </div>-->
+<!--        <div class="carousel-item">-->
+<!--            <img src="https://www.thegef.org/sites/default/files/styles/banner_image/public/2021-11/topics_banner_blendedfinance.jpg?h=4e9a1ef8&itok=wkLt635t" class="d-block w-100" alt="Finance Image 2">-->
+<!--        </div>-->
+<!--        <div class="carousel-item">-->
+<!--            <img src="https://financeplaninfo.com/wp-content/uploads/2023/02/finance-kya-hai.webp" class="d-block w-100" alt="Finance Image 3">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">-->
+<!--        <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--        <span class="visually-hidden">Previous</span>-->
+<!--    </button>-->
+<!--    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">-->
+<!--        <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--        <span class="visually-hidden">Next</span>-->
+<!--    </button>-->
+<!--</div>-->
+
+<!--<div class="container mt-5">-->
+<!--    <div class="row justify-content-center">-->
+<!--        <div class="col-lg-8">-->
+<!--            <p class="text-justify">-->
+<!--                नमस्कार, मी रामेश्वर कुऱ्हाडे आर के फाइनेंशियल ओनर आणि फाइनेंशियल एडवायजर. सांगायच झाल तर मी छोटया खेड्या गावातील एका सामान्य गरीब मजूरदाराचा मुलगा. कमी वयातच मला आर्थिक तडजोड कशी असते हे पाहायला मिळाली, आणि परिस्थिती फार कठीण होती. काही चांगल्य लोकांच्या सांगतीमुळे मला पैशाबद्दल गोष्टी समजू लागल्या. शब्द कमी पडतील एवढा अनुभव मला मीळाला आणि त्याच कारणामुळे वयाच्या फक्त 30 व्या वर्षी मी आर्थिक स्वतंत्र मिळवले. आणि मला तुम्हाला एवढंच सांगायच की योग्य नाॅलेज तुम्हीं जर घ्याल तर आयुष्यातले पुढचे बरेच प्रोब्लम टाळता येतील. म्हणुन आर के फाइनेंशियल मध्ये इन्वेस्ट करुन आर्थिक स्वतंत्र मिळवा.-->
+<!--            </p>-->
+<!--            <h2>RAMESHWAR K. KURHADE</h2>-->
+<!--            <h2>(R K FINANCIAL OWNER, FINANCIAL ADVISOR)</h2>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="my-5">-->
+<!--        <h3>काय तुम्ही खालील प्रॉब्लेमला सामोरे जात आहात?</h3>-->
+<!--        <h4>➡️ महिन्याच्या शेवटी पगार शिल्लक राहत नाही.</h4>-->
+<!--        <h4>➡️ मुलाच्या वाढत्या शिक्षणाचा खर्च</h4>-->
+<!--        <h4>➡️ व्यवसाय वाढीसाठी आर्थिक तरदूत कशी करू?</h4>-->
+<!--        <h4>➡️ महागड्या जीवनशैलीचा खर्च</h4>-->
+<!--        <h4>➡️ व्यवसायामध्ये पैशाचा Cash flow मॅनेज कसा करायचा?</h4>-->
+<!--        <h4>➡️ घेतलेले कर्ज, परिणामकारक आर्थिक नियोजन करून लवकर कर्जमुक्त कसे होऊ?</h4>-->
+<!--        <h3>जर तुम्ही प्रॉब्लेमला सामोरे जात असाल तर तुम्ही एकटे नाही. आजच आर के फायनान्शिअलसोबत संपर्क साधून आपले प्रॉब्लेम सॉल करा.</h3>-->
+<!--    </div>-->
+<!--    <div class="my-5">-->
+<!--        <h3>आर.के फाइनेंशियलसोबत तुम्हाला मिळतील खास 3 बोनस!</h3>-->
+<!--        <h4>1) Budget planner: मनी मॅनेजमेंट फॉर्म्युला तुम्ही स्वतःसाठी वापरू शकाल.</h4>-->
+<!--        <h4>2) Important Lessons: ज्या गोष्टी तुम्हाला स्वतःहून कोणीच सांगणार नाही अशा महत्वाच्या फाइनेंशियल टिप्स दिले जातील.</h4>-->
+<!--        <h4>3) Upcoming Session: कर्जमुक्त आयुष्य कसे जगायचे किंवा वेगवेगळ्या व्यवसायांमधून पैसे कसे कमावता येतात याची माहिती.</h4>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<section class="vh-50" style="background-color: #ffffff;">-->
+<!--    <div class="container h-50">-->
+<!--        <div class="row d-flex justify-content-center align-items-center h-50">-->
+<!--            <div class="col-lg-8">-->
+<!--                <div class="card text-black">-->
+<!--                    <div class="card-body p-md-5">-->
+<!--                        <div class="row justify-content-center">-->
+<!--                            <div class="col-md-12">-->
+<!--                                <p class="text-center h2 fw-bold mb-5 mx-1 mx-md-4 mt-4">-->
+<!--                                    <span style="color:#009688">कष्टाने कमावलेल्या पैशांचं नियोजन करण्यासाठी आर के फाइनेंशियलमध्ये त्वरित रजिस्टर करा आणि बजेट प्लानर मिळवा</span>-->
+<!--                                </p>-->
+<!--                                <form style="background-color: #ffffff;" class="text-center p-4" id="contactForm" action="save/data/" method="post">-->
+<!--                                    {% csrf_token %}-->
+<!--                                    <div class="mb-3">-->
+<!--                                        <label for="name" class="form-label">Name:</label>-->
+<!--                                        <input type="text" id="name" name="name" class="form-control" required>-->
+<!--                                    </div>-->
+<!--                                    <div class="mb-3">-->
+<!--                                        <label for="email" class="form-label">Email:</label>-->
+<!--                                        <input type="email" id="email" name="email" class="form-control" required>-->
+<!--                                    </div>-->
+<!--                                    <div class="mb-3">-->
+<!--                                        <label for="mobile" class="form-label">Mobile:</label>-->
+<!--                                        <input type="text" id="mobile" name="mobile" class="form-control" required>-->
+<!--                                    </div>-->
+<!--                                    <button type="submit" class="btn btn-primary">Submit</button>-->
+<!--                                </form>-->
+<!--                                <div id="messageContainer" class="mt-3"></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<!--<div class="text-center my-5">-->
+<!--    <i class='fas fa-hand-point-right' style='font-size:35px;color:#009688'></i>-->
+<!--    <a href="/feedback" style="color:#009688">फीडबॅक फॉर्म भरण्यासाठी येथे क्लिक करा</a><br><br>-->
+<!--    <i class='fas fa-hand-point-right' style='font-size:35px;color:#FF5722'></i>-->
+<!--    <a href="/admin" style="color:#FF5722">तेल आणि सिमेंटची ऑर्डर देण्यासाठी येथे क्लिक करा</a>-->
+<!--</div>-->
+
+<!--<footer class="footer-middle">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-11">-->
+<!--                <h4 class="text-center">Follow Us</h4>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-12 copy text-center">-->
+<!--                <p>&copy; 2024 आर.के फाइनेंशियल. सर्व हक्क राखीव.</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</footer>-->
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+<!--<script>-->
+<!--    $(document).ready(function() {-->
+<!--        $('#contactForm').on('submit', function(e) {-->
+<!--            e.preventDefault(); // Prevent default form submission-->
+<!--            var formData = $(this).serialize(); // Serialize form data-->
+<!--            var $form = $(this); // Save reference to form for later use-->
+<!--            $.ajax({-->
+<!--                type: 'POST',-->
+<!--                url: $(this).attr('action'),-->
+<!--                data: formData,-->
+<!--                success: function(response) {-->
+<!--                    console.log(response); // Handle successful response-->
+<!--                    $form[0].reset(); // Clear form fields-->
+<!--                    $('#messageContainer').html('<div class="alert alert-success">फॉर्म यशस्वीरित्या सबमिट केला!</div>');-->
+<!--                },-->
+<!--                error: function(xhr, status, error) {-->
+<!--                    console.error(xhr.responseText); // Handle errors-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>आर के इंटरप्राईज </title>
+    <title>आर के इंटरप्राईज</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -145,7 +928,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <p class="text-justify">
-                नमस्कार, मी रामेश्वर कुऱ्हाडे आर के फाइनेंशियल ओनर आणि फाइनेंशियल एडवायजर. सांगायच झाल तर मी छोटया खेड्या गावातील एका सामान्य गरीब मजूरदाराचा मुलगा. कमी वयातच मला आर्थिक तडजोड कशी असते हे पाहायला मिळाली, आणि परिस्थिती फार कठीण होती. काही चांगल्य लोकांच्या सांगतीमुळे मला पैशाबद्दल गोष्टी समजू लागल्या. शब्द कमी पडतील एवढा अनुभव मला मीळाला आणि त्याच कारणामुळे वयाच्या फक्त 30 व्या वर्षी मी आर्थिक स्वतंत्र मिळवले. आणि मला तुम्हाला एवढंच सांगायच की योग्य नाॅलेज तुम्हीं जर घ्याल तर आयुष्यातले पुढचे बरेच प्रोब्लम टाळता येतील. म्हणुन आर के फाइनेंशियल मध्ये इन्वेस्ट करुन आर्थिक स्वतंत्र मिळवा.
+                नमस्कार, मी रामेश्वर कुऱ्हाडे आर के इंटरप्राईज ओनर आणि फाइनेंशियल एडवायजर. सांगायच झाल तर मी छोटया खेड्या गावातील एका सामान्य गरीब मजूरदाराचा मुलगा. कमी वयातच मला आर्थिक तडजोड कशी असते हे पाहायला मिळाली, आणि परिस्थिती फार कठीण होती. काही चांगल्य लोकांच्या संगतीमुळे मला पैशाबद्दल गोष्टी समजू लागल्या. शब्द कमी पडतील एवढा अनुभव मला मीळाला आणि त्याच कारणामुळे वयाच्या फक्त 30 व्या वर्षी मी आर्थिक स्वतंत्र मिळवले. आणि मला तुम्हाला एवढंच सांगायच की योग्य नाॅलेज तुम्हीं जर घ्याल तर आयुष्यातले पुढचे बरेच प्रोब्लम टाळता येतील. म्हणुन आर के इंटरप्राईज मध्ये इन्वेस्ट करुन आर्थिक स्वतंत्र मिळवा.
             </p>
             <h2>RAMESHWAR K. KURHADE</h2>
             <h2>(R K ENTERPRISE OWNER, FINANCIAL ADVISOR)</h2>
@@ -167,8 +950,7 @@
         <h4>2) Important Lessons: ज्या गोष्टी तुम्हाला स्वतःहून कोणीच सांगणार नाही अशा महत्वाच्या फाइनेंशियल टिप्स दिले जातील.</h4>
         <h4>3) Upcoming Session: कर्जमुक्त आयुष्य कसे जगायचे किंवा वेगवेगळ्या व्यवसायांमधून पैसे कसे कमावता येतात याची माहिती.</h4>
     </div>
-}
-\
+</div>
 
 <section class="vh-50" style="background-color: #ffffff;">
     <div class="container h-50">
@@ -179,7 +961,7 @@
                         <div class="row justify-content-center">
                             <div class="col-md-12">
                                 <p class="text-center h2 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                                    <span style="color:#009688">कष्टाने कमावलेल्या पैशांचं नियोजन करण्यासाठी आर के फाइनेंशियलमध्ये त्वरित रजिस्टर करा आणि बजेट प्लानर मिळवा</span>
+                                    <span style="color:#009688">कष्टाने कमावलेल्या पैशांचं नियोजन करण्यासाठी आर के इंटरप्राईजमध्ये त्वरित रजिस्टर करा आणि बजेट प्लानर मिळवा</span>
                                 </p>
                                 <form style="background-color: #ffffff;" class="text-center p-4" id="contactForm" action="save/data/" method="post">
                                     {% csrf_token %}
@@ -223,7 +1005,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 copy text-center">
-                <p>&copy; 2024 आर के इंटरप्राईज. सर्व हक्क राखीव.खीव.</p>
+                <p>&copy; 2024 आर के इंटरप्राईज. सर्व हक्क राखीव.</p>
             </div>
         </div>
     </div>

@@ -59,9 +59,9 @@ def generate_pdf_for_cement(oil):
         alignment=1,  # Centered
         spaceAfter=12
     )
-
+    normal_style = styles['Normal']
     # Heading
-    heading = Paragraph(" RK Financial Cement Order Report", heading_style)
+    heading = Paragraph(" R K ENTERPRISE  Cement Order Report", heading_style)
 
     # Define data for the table
     data = [
@@ -92,9 +92,30 @@ def generate_pdf_for_cement(oil):
     ])
 
     table.setStyle(style)
+    large_spacer = Paragraph("<br/><br/><br/><br/><br/><br/><br/><br/>", normal_style)
+    # Signature text
+    client_signature = Paragraph("Client Signature:", normal_style)
+    authority = Paragraph("Authority:", normal_style)
+
+    # Create a table for signatures with proper alignment
+    signatures_data = [
+        [client_signature, authority]
+    ]
+    signatures_table = Table(signatures_data, colWidths=[3 * inch, 3 * inch])
+    signatures_style = TableStyle([
+        ('ALIGN', (0, 0), (0, 0), 'LEFT'),
+        ('ALIGN', (1, 0), (1, 0), 'RIGHT'),
+        ('FONTNAME', (0, 0), (-1, -1), 'Helvetica'),
+        ('FONTSIZE', (0, 0), (-1, -1), 10),
+        ('VALIGN', (0, 0), (-1, -1), 'TOP')
+    ])
+    signatures_table.setStyle(signatures_style)
+    # Create spacers for spacing between table, signature, and authority sections
+    space_after_table = Spacer(1, 0.5 * inch)  # Adjust the height as needed for spacing
+    space_between_signatures = Spacer(1, 0.75 * inch)  # Adjust the height as needed for spacing
 
     # Build the PDF
-    elements = [heading, table]
+    elements = [heading, table,space_after_table,large_spacer,signatures_table,space_between_signatures]
     doc.build(elements)
 
     buffer.seek(0)
@@ -116,7 +137,7 @@ class CementAdmin(admin.ModelAdmin):
         pdf_buffer = generate_pdf_for_cement(obj)
 
         # Email details
-        subject = 'RK Financial New Cement Order Report'
+        subject = 'R K ENTERPRISE New Cement Order Report'
         message = 'A new Cement order has been placed. Please find the report attached.'
         from_email = settings.DEFAULT_FROM_EMAIL
         recipient_list = [settings.ADMIN_EMAIL]  # Ensure you set this in your settings.py
@@ -252,7 +273,6 @@ from reportlab.lib.units import inch
 
 
 
-
 def generate_pdf_for_oil(oil):
     buffer = BytesIO()
     doc = SimpleDocTemplate(buffer, pagesize=letter)
@@ -266,9 +286,11 @@ def generate_pdf_for_oil(oil):
         alignment=1,  # Centered
         spaceAfter=12
     )
+    normal_style = styles['Normal']
+
 
     # Heading
-    heading = Paragraph(" RK Financial Oil Order Report", heading_style)
+    heading = Paragraph("R K ENTERPRISE Oil Order Report", heading_style)
 
     # Define data for the table
     data = [
@@ -276,7 +298,7 @@ def generate_pdf_for_oil(oil):
         ["Order ID", str(oil.id)],
         ["Person Name", oil.name],
         ["Person Mobile number", oil.mobile],
-        ["Personal EmailID",oil.email],
+        ["Personal EmailID", oil.email],
         ["Oil Type", str(oil.fuel_type)],
         ["Oil Quantity(ltrs)", str(oil.quantity)],
         # Add more fields as needed
@@ -299,9 +321,31 @@ def generate_pdf_for_oil(oil):
     ])
 
     table.setStyle(style)
+    table.setStyle(style)
+    large_spacer = Paragraph("<br/><br/><br/><br/><br/><br/><br/><br/>", normal_style)
+    # Signature text
+    client_signature = Paragraph("Client Signature:", normal_style)
+    authority = Paragraph("Authority:", normal_style)
+
+    # Create a table for signatures with proper alignment
+    signatures_data = [
+        [client_signature, authority]
+    ]
+    signatures_table = Table(signatures_data, colWidths=[3 * inch, 3 * inch])
+    signatures_style = TableStyle([
+        ('ALIGN', (0, 0), (0, 0), 'LEFT'),
+        ('ALIGN', (1, 0), (1, 0), 'RIGHT'),
+        ('FONTNAME', (0, 0), (-1, -1), 'Helvetica'),
+        ('FONTSIZE', (0, 0), (-1, -1), 10),
+        ('VALIGN', (0, 0), (-1, -1), 'TOP')
+    ])
+    signatures_table.setStyle(signatures_style)
+    # Create spacers for spacing between table, signature, and authority sections
+    space_after_table = Spacer(1, 0.5 * inch)  # Adjust the height as needed for spacing
+    space_between_signatures = Spacer(1, 0.75 * inch)  # Adjust the height as needed for spacing
 
     # Build the PDF
-    elements = [heading, table]
+    elements = [heading, table, space_after_table, large_spacer, signatures_table, space_between_signatures]
     doc.build(elements)
 
     buffer.seek(0)
@@ -329,10 +373,10 @@ class OilAdmin(admin.ModelAdmin):
         pdf_buffer = generate_pdf_for_oil(obj)
 
         # Email details
-        subject = 'RK Financial New Oil Order Report'
+        subject = 'R K ENTERPRISE  New Oil Order Report'
         message = 'A new oil order has been placed. Please find the report attached.'
         from_email = settings.DEFAULT_FROM_EMAIL
-        # from_email = "jadhavatul161093@gmail.com"
+
         recipient_list = [settings.ADMIN_EMAIL]  # Ensure you set this in your settings.py
         # recipient_list = ["jadhavatul1610@gmail.com"]  # Ensure you set this in your settings.py
 
@@ -401,7 +445,7 @@ def generate_pdf_for_withdraw(obj):
     normal_style = styles['Normal']
 
     # Heading
-    heading = Paragraph("RK Financial Withdraw Slip", heading_style)
+    heading = Paragraph("R K ENTERPRISE Withdraw Slip", heading_style)
 
     # Define data for the table
     data = [
@@ -475,7 +519,7 @@ class WithdrawAdmin(admin.ModelAdmin):
         pdf_buffer = generate_pdf_for_withdraw(obj)
 
         # Email details
-        subject = 'RK Financial Withdraw Amount Slip'
+        subject = 'R K ENTERPRISE Withdraw Amount Slip'
         message = 'Please find the Withdraw Slip attached.'
         from_email = settings.DEFAULT_FROM_EMAIL
 
